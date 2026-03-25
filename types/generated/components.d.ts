@@ -79,30 +79,6 @@ export interface LayoutNewsletterStrip extends Struct.ComponentSchema {
   };
 }
 
-export interface NewsArticleSection extends Struct.ComponentSchema {
-  collectionName: 'components_news_article_sections';
-  info: {
-    displayName: 'article-section';
-  };
-  attributes: {
-    content: Schema.Attribute.Blocks;
-    href: Schema.Attribute.String;
-    items: Schema.Attribute.Component<'news.bullet-item', true>;
-    label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['text', 'heading', 'cta', 'bullets']>;
-  };
-}
-
-export interface NewsBulletItem extends Struct.ComponentSchema {
-  collectionName: 'components_news_bullet_items';
-  info: {
-    displayName: 'bullet-item';
-  };
-  attributes: {
-    text: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -113,8 +89,6 @@ declare module '@strapi/strapi' {
       'layout.link-item': LayoutLinkItem;
       'layout.nav-dropdown': LayoutNavDropdown;
       'layout.newsletter-strip': LayoutNewsletterStrip;
-      'news.article-section': NewsArticleSection;
-      'news.bullet-item': NewsBulletItem;
     }
   }
 }
