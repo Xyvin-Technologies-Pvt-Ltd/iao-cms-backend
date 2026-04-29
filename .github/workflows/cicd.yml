@@ -2,7 +2,7 @@ name: Deploy IAO_CMS
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["devoo"]
   workflow_dispatch:  
 
 jobs:
