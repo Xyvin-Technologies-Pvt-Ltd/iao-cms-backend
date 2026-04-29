@@ -6,8 +6,14 @@
     "pluralName": "programme-campuses",
     "displayName": "Programme Campus"
   },
-  "options": { "draftAndPublish": true },
-  "pluginOptions": { "i18n": { "localized": true } },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "campus_slug": {
       "type": "string",
@@ -15,71 +21,20 @@
     },
     "programme_type": {
       "type": "enumeration",
-      "enum": ["master", "lateral", "manual-therapy"],
-      "required": true
-    },
-    "intro": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "subtitle": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "breadcrumb_label": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "location_campus": {
-      "type": "string"
-    },
-    "location_address": {
-      "type": "string"
-    },
-    "location_map_search": {
-      "type": "text"
-    },
-    "location_map_embed": {
-      "type": "text"
-    },
-    "lateral_programme_href": {
-      "type": "string"
-    },
-    "src": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "register_link": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_year1": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_year2": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_year3": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_year4": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_included": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "price_footnote": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "required": true,
+      "enum": [
+        "master",
+        "lateral",
+        "manual-therapy"
+      ]
     },
     "content_overrides": {
       "type": "json",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
