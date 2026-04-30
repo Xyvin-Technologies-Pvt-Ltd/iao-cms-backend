@@ -1,13 +1,58 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutHero extends Struct.ComponentSchema {
+  collectionName: 'components_about_heroes';
+  info: {
+    displayName: 'Hero';
+  };
+  attributes: {
+    intro: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+    videoThumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    videoUrl: Schema.Attribute.String;
+  };
+}
+
+export interface AboutMission extends Struct.ComponentSchema {
+  collectionName: 'components_about_missions';
+  info: {
+    displayName: 'Mission';
+  };
+  attributes: {
+    closing: Schema.Attribute.String;
+    intro: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+    valuesLine: Schema.Attribute.Blocks;
+  };
+}
+
 export interface AboutValueItem extends Struct.ComponentSchema {
   collectionName: 'components_about_value_items';
   info: {
-    displayName: 'value-item';
+    displayName: 'Value Item';
   };
   attributes: {
-    valueDescription: Schema.Attribute.Blocks;
-    valueTitle: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_forms';
+  info: {
+    displayName: 'Form';
+  };
+  attributes: {
+    consentAfter: Schema.Attribute.String;
+    consentBefore: Schema.Attribute.String;
+    consentLinkText: Schema.Attribute.String;
+    emailLabel: Schema.Attribute.String;
+    firstNameLabel: Schema.Attribute.String;
+    lastNameLabel: Schema.Attribute.String;
+    messageLabel: Schema.Attribute.String;
+    submitLabel: Schema.Attribute.String;
   };
 }
 
@@ -82,7 +127,10 @@ export interface LayoutNewsletterStrip extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.hero': AboutHero;
+      'about.mission': AboutMission;
       'about.value-item': AboutValueItem;
+      'contact.form': ContactForm;
       'faq.category': FaqCategory;
       'faq.faq-item': FaqFaqItem;
       'layout.footer-column': LayoutFooterColumn;

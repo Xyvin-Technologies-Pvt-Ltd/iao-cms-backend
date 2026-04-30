@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_missions",
+  "info": {
+    "displayName": "Mission"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "blocks"
+    },
+    "valuesLine": {
+      "type": "blocks"
+    },
+    "closing": {
+      "type": "string"
+    }
+  }
+}

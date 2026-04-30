@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_contact_forms",
+  "info": {
+    "displayName": "Form"
+  },
+  "options": {},
+  "attributes": {
+    "firstNameLabel": {
+      "type": "string"
+    },
+    "lastNameLabel": {
+      "type": "string"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "messageLabel": {
+      "type": "string"
+    },
+    "consentBefore": {
+      "type": "string"
+    },
+    "consentLinkText": {
+      "type": "string"
+    },
+    "consentAfter": {
+      "type": "string"
+    },
+    "submitLabel": {
+      "type": "string"
+    }
+  }
+}

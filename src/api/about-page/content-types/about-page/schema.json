@@ -15,87 +15,20 @@
     }
   },
   "attributes": {
-    "heroTitle": {
-      "type": "string",
+    "hero": {
+      "type": "component",
+      "component": "about.hero",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "heroSubtitle": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "heroVideoUrl": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "heroVideoThumbnail": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "intro1": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "intro2": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "missionTitle": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "missionIntro": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "missionValues": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "missionClosing": {
-      "type": "string",
+    "mission": {
+      "type": "component",
+      "component": "about.mission",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -104,16 +37,8 @@
     },
     "values": {
       "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "component": "about.value-item",
-      "repeatable": true
-    },
-    "heroDescription": {
-      "type": "blocks",
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true

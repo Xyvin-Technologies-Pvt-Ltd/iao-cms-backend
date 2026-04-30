@@ -1,16 +1,15 @@
 {
   "collectionName": "components_about_value_items",
   "info": {
-    "displayName": "value-item"
+    "displayName": "Value Item"
   },
   "options": {},
   "attributes": {
-    "valueTitle": {
+    "title": {
       "type": "string"
     },
-    "valueDescription": {
+    "description": {
       "type": "blocks"
     }
-  },
-  "config": {}
+  }
 }
