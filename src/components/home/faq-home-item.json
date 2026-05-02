@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_faq_home_items",
+  "info": {
+    "displayName": "FAQ Home Item",
+    "description": "One FAQ accordion item on the home page; answer supports **bold**, [label](url), bullet lists"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

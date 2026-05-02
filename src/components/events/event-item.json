@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_events_event_items",
+  "info": {
+    "displayName": "Event Item",
+    "description": "A single scheduled event with date, time, and registration link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "day_label": {
+      "type": "string"
+    },
+    "date_short": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "register_url": {
+      "type": "string",
+      "required": true
+    },
+    "register_label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

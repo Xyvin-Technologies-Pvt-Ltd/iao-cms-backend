@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "impressum_pages",
+  "info": {
+    "singularName": "impressum-page",
+    "pluralName": "impressum-pages",
+    "displayName": "Impressum Page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "sections": {
+      "type": "component",
+      "component": "shared.page-section",
+      "repeatable": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_home_nl_ebook_blocks",
+  "info": {
+    "displayName": "NL E-book Block",
+    "description": "E-book CTA teaser on nl home; CTA href is prefixedHref(locale, 'e-book'), not stored here"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "paragraph_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.nl-bullet-line",
+      "required": true
+    },
+    "paragraph_2": {
+      "type": "text",
+      "required": true
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "image_alt": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

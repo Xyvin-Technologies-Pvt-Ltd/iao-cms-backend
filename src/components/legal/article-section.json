@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_legal_article_sections",
+  "info": {
+    "displayName": "Article Section",
+    "description": "A numbered article/clause for Terms & Conditions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "blocks"
+    }
+  }
+}

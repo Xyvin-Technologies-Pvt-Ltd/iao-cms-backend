@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "csr_pages",
+  "info": {
+    "singularName": "csr-page",
+    "pluralName": "csr-pages",
+    "displayName": "CSR Page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "intro": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "sustainability": {
+      "type": "component",
+      "component": "csr.csr-section",
+      "repeatable": false,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "social": {
+      "type": "component",
+      "component": "csr.csr-section",
+      "repeatable": false,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "governance": {
+      "type": "component",
+      "component": "csr.csr-section",
+      "repeatable": false,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "scope": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

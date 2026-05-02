@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletter_strip",
+  "info": {
+    "singularName": "newsletter-strip",
+    "pluralName": "newsletter-strips",
+    "displayName": "Newsletter strip",
+    "description": "Teaser block (title, copy, CTA) shown above the footer on many routes. CTA href is fixed in the app (newsletter signup page)."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "button_label": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

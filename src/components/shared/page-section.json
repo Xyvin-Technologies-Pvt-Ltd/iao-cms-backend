@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_page_sections",
+  "info": {
+    "displayName": "Page Section",
+    "description": "A titled section with rich text body — used in legal/policy pages"
+  },
+  "options": {},
+  "attributes": {
+    "section_title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    }
+  }
+}

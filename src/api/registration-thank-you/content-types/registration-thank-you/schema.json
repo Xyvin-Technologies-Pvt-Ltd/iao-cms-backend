@@ -29,11 +29,11 @@
     "breadcrumb": {
       "type": "string"
     },
-    "email": {
+    "email_label": {
       "type": "string"
     },
-    "paragraphs": {
-      "type": "json"
+    "body": {
+      "type": "blocks"
     },
     "jotform_iframe_src": {
       "type": "text"

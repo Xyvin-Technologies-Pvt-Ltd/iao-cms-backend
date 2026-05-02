@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_events_event_sections",
+  "info": {
+    "displayName": "Event Section",
+    "description": "A titled group of events (e.g. '4-Year Programme Open Days')"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "events": {
+      "type": "component",
+      "component": "events.event-item",
+      "repeatable": true
+    }
+  }
+}

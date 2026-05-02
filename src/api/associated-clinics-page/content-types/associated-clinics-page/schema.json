@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "associated_clinics_pages",
+  "info": {
+    "singularName": "associated-clinics-page",
+    "pluralName": "associated-clinics-pages",
+    "displayName": "Associated Clinics Page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "intro": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "view_list_label": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "list_url": {
+      "type": "string"
+    },
+    "why_choose_title": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "why_choose_items": {
+      "type": "component",
+      "component": "shared.list-item",
+      "repeatable": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "faq_section_title": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "faq_items": {
+      "type": "component",
+      "component": "shared.clinic-faq-item",
+      "repeatable": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

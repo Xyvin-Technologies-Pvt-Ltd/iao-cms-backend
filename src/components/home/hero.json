@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_home_heroes",
+  "info": {
+    "displayName": "Home Hero"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "lead": {
+      "type": "blocks",
+      "required": true
+    },
+    "lead_secondary": {
+      "type": "blocks"
+    },
+    "cta_label": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "string",
+      "required": true
+    },
+    "nl_about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero-nl-about"
+    }
+  }
+}

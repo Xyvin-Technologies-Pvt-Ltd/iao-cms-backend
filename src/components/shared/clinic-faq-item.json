@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_clinic_faq_items",
+  "info": {
+    "displayName": "Clinic FAQ Item",
+    "description": "A question + rich text answer for the Associated Clinics FAQ accordion"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "blocks"
+    }
+  }
+}

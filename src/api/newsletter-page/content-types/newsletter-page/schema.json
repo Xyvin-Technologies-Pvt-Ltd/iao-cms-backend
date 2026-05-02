@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletter_pages",
+  "info": {
+    "singularName": "newsletter-page",
+    "pluralName": "newsletter-pages",
+    "displayName": "Newsletter Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "breadcrumb": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "first_name": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "last_name": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "email": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "consent": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "submit": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "form_submitting": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "form_success": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "form_error": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "form_validation": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

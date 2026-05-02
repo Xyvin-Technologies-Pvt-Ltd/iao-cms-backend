@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_home_nl_programmes_sections",
+  "info": {
+    "displayName": "NL Programmes Section",
+    "description": "Full NetherlandAboutSection: programmes list + Enatom block + e-book block. Only filled for nl locale."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text",
+      "required": true
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "image_alt": {
+      "type": "string",
+      "required": true
+    },
+    "programme_rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.nl-programme-row",
+      "required": true
+    },
+    "enatom": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.nl-enatom-block",
+      "required": true
+    },
+    "ebook": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.nl-ebook-block",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_csr_csr_sections",
+  "info": {
+    "displayName": "CSR Section",
+    "description": "A titled CSR pillar with a list of bullet points"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.list-item",
+      "repeatable": true
+    }
+  }
+}

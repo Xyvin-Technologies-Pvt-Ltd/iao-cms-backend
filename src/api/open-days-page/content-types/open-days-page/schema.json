@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "open_days_pages",
+  "info": {
+    "singularName": "open-days-page",
+    "pluralName": "open-days-pages",
+    "displayName": "Open Days Page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "subtitle": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "event_sections": {
+      "type": "component",
+      "component": "events.event-section",
+      "repeatable": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

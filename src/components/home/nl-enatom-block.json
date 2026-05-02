@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_home_nl_enatom_blocks",
+  "info": {
+    "displayName": "NL Enatom Block"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "paragraph_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "intro_before_bullets": {
+      "type": "string",
+      "required": true
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.nl-bullet-line",
+      "required": true
+    },
+    "paragraph_3": {
+      "type": "text",
+      "required": true
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    },
+    "external_url": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "image_alt": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

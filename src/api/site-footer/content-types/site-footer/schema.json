@@ -1,0 +1,77 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_footer",
+  "info": {
+    "singularName": "site-footer",
+    "pluralName": "site-footers",
+    "displayName": "Site Footer",
+    "description": "Footer column copy — one entry per locale. Legal page labels stay on their own single types."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "academy": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "address_street": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "address_city_country": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "programme_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.footer-programme-link",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "about_iao": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "associated_clinics": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "csr_policy": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "quick_links": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "not_satisfied": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "follow_us": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "recaptcha_notice": {
+      "type": "text",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}
