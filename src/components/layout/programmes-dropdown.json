@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_programmes_dropdowns",
+  "info": {
+    "displayName": "Programmes Dropdown",
+    "description": "Labels for the Programmes dropdown; omt_egypt only for en, manual_therapy only for nl"
+  },
+  "options": {},
+  "attributes": {
+    "master":         { "type": "string", "required": true },
+    "lateral":        { "type": "string", "required": true },
+    "postacademic":   { "type": "string", "required": true },
+    "all":            { "type": "string", "required": true },
+    "omt_egypt":      { "type": "string" },
+    "manual_therapy": { "type": "string" }
+  }
+}

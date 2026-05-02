@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_footer_programme_links",
+  "info": {
+    "displayName": "Footer Programme Link",
+    "description": "One row in the footer Academy column; nav_key drives the href via localePaths"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "nav_key": {
+      "type": "enumeration",
+      "enum": ["master", "lateral", "postacademic", "manueleTherapie"],
+      "required": true
+    }
+  }
+}

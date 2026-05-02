@@ -48,10 +48,6 @@
     },
     "contact_phone": {
       "type": "string"
-    },
-    "footer_note": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

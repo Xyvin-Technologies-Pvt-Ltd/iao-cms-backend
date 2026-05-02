@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "newsletter_pages",
+  "collectionName": "site_footer",
   "info": {
-    "singularName": "newsletter-page",
-    "pluralName": "newsletter-pages",
-    "displayName": "Newsletter Page"
+    "singularName": "site-footer",
+    "pluralName": "site-footers",
+    "displayName": "Site Footer",
+    "description": "Footer column copy — one entry per locale. Legal page labels stay on their own single types."
   },
   "options": {
     "draftAndPublish": true
@@ -15,53 +16,61 @@
     }
   },
   "attributes": {
-    "breadcrumb": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "title": {
+    "academy": {
       "type": "string",
       "required": true,
       "pluginOptions": { "i18n": { "localized": true } }
     },
-    "description": {
+    "address_street": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "address_city_country": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "programme_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.footer-programme-link",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "about_iao": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "associated_clinics": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "csr_policy": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "quick_links": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "not_satisfied": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "follow_us": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "recaptcha_notice": {
       "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "first_name": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "last_name": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "email": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "consent": {
-      "type": "blocks",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "submit": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "form_submitting": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "form_success": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "form_error": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "form_validation": {
-      "type": "text",
+      "required": true,
       "pluginOptions": { "i18n": { "localized": true } }
     }
   }

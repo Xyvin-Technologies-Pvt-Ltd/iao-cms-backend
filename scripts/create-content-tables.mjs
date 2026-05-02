@@ -50,16 +50,14 @@ const tables = [
     name: 'accessibility_pages',
     extra: `
       title        VARCHAR(255) NOT NULL,
-      intro        JSONB,
-      footer_note  VARCHAR(255)
+      intro        JSONB
     `,
   },
   {
     name: 'cookies_pages',
     extra: `
       title        VARCHAR(255) NOT NULL,
-      intro        JSONB,
-      footer_note  VARCHAR(255)
+      intro        JSONB
     `,
   },
   {
@@ -67,8 +65,7 @@ const tables = [
     extra: `
       title        VARCHAR(255) NOT NULL,
       last_updated VARCHAR(255),
-      intro        JSONB,
-      footer_note  VARCHAR(255)
+      intro        JSONB
     `,
   },
   {
@@ -76,8 +73,7 @@ const tables = [
     extra: `
       title        VARCHAR(255) NOT NULL,
       last_updated VARCHAR(255),
-      intro        JSONB,
-      footer_note  VARCHAR(255)
+      intro        JSONB
     `,
   },
   {
@@ -91,16 +87,14 @@ const tables = [
       contact_address  VARCHAR(255),
       contact_email    VARCHAR(255),
       contact_website  VARCHAR(255),
-      contact_phone    VARCHAR(255),
-      footer_note      VARCHAR(255)
+      contact_phone    VARCHAR(255)
     `,
   },
   {
     name: 'legal_notice_pages',
     extra: `
       title        VARCHAR(255) NOT NULL,
-      intro        JSONB,
-      footer_note  VARCHAR(255)
+      intro        JSONB
     `,
   },
   {
@@ -155,16 +149,6 @@ const tables = [
       meta_description_thank_you TEXT,
       title_form                VARCHAR(255),
       intro_form                VARCHAR(255),
-      first_name                VARCHAR(255),
-      last_name                 VARCHAR(255),
-      email                     VARCHAR(255),
-      privacy_consent_before    VARCHAR(255),
-      privacy_consent_link      VARCHAR(255),
-      privacy_consent_after     VARCHAR(255),
-      submit                    VARCHAR(255),
-      form_submitting           VARCHAR(255),
-      form_error                TEXT,
-      form_validation           TEXT,
       title_thank_you           VARCHAR(255),
       thank_you_message         TEXT,
       brevo_form_url            VARCHAR(255)
@@ -181,9 +165,7 @@ const tables = [
       first_name          VARCHAR(255),
       last_name           VARCHAR(255),
       email               VARCHAR(255),
-      consent_before      VARCHAR(255),
-      consent_link_text   VARCHAR(255),
-      consent_after       VARCHAR(255),
+      consent             JSONB,
       submit              VARCHAR(255),
       form_submitting     VARCHAR(255),
       form_success        VARCHAR(255),

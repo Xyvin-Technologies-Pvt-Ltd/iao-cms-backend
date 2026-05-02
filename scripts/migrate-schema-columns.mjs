@@ -3,7 +3,7 @@
  *
  * Alters existing content type tables to match the refactored schemas:
  * - Drop old JSON columns that are now replaced by repeatable components
- * - Add new columns (intro as jsonb for blocks, footer_note, etc.)
+ * - Add new columns (intro as jsonb for blocks, etc.)
  * - Rename columns where field names changed
  *
  * Run AFTER migrate-components.mjs and after Strapi restarts once.
@@ -40,18 +40,12 @@ async function main() {
   await client.connect();
 
   // -------------------------------------------------------------------------
-  // cookies_pages: drop sections json → handled by join table; add intro+footer_note
+  // cookies_pages: drop sections json → handled by join table; add intro
   // -------------------------------------------------------------------------
   console.log('\n=== cookies_pages ===');
   await run('drop sections json', `ALTER TABLE cookies_pages DROP COLUMN IF EXISTS sections`);
   await run('add intro (blocks)', `ALTER TABLE cookies_pages ADD COLUMN IF NOT EXISTS intro JSONB`);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='cookies_pages' AND column_name='footer_label') THEN
-        ALTER TABLE cookies_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE cookies_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
 
   // -------------------------------------------------------------------------
   // privacy_pages
@@ -59,13 +53,7 @@ async function main() {
   console.log('\n=== privacy_pages ===');
   await run('drop sections json', `ALTER TABLE privacy_pages DROP COLUMN IF EXISTS sections`);
   await run('add intro (blocks)', `ALTER TABLE privacy_pages ADD COLUMN IF NOT EXISTS intro JSONB`);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='privacy_pages' AND column_name='footer_label') THEN
-        ALTER TABLE privacy_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE privacy_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
 
   // -------------------------------------------------------------------------
   // disclaimer_pages
@@ -79,13 +67,7 @@ async function main() {
       END IF;
     END $$
   `);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='disclaimer_pages' AND column_name='footer_label') THEN
-        ALTER TABLE disclaimer_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE disclaimer_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
 
   // -------------------------------------------------------------------------
   // terms_pages
@@ -94,13 +76,7 @@ async function main() {
   await run('drop articles json', `ALTER TABLE terms_pages DROP COLUMN IF EXISTS articles`);
   await run('add intro (blocks)', `ALTER TABLE terms_pages ADD COLUMN IF NOT EXISTS intro JSONB`);
   await run('add last_updated', `ALTER TABLE terms_pages ADD COLUMN IF NOT EXISTS last_updated VARCHAR(255)`);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='terms_pages' AND column_name='footer_label') THEN
-        ALTER TABLE terms_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE terms_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
   await run('rename contact_mail → contact_email', `
     DO $$ BEGIN
       IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='terms_pages' AND column_name='contact_mail') THEN
@@ -137,13 +113,7 @@ async function main() {
       END IF;
     END $$
   `);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='legal_notice_pages' AND column_name='footer_label') THEN
-        ALTER TABLE legal_notice_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE legal_notice_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
 
   // -------------------------------------------------------------------------
   // impressum_pages
@@ -157,13 +127,7 @@ async function main() {
   console.log('\n=== accessibility_pages ===');
   await run('drop content col (replaced by intro+sections)', `ALTER TABLE accessibility_pages DROP COLUMN IF EXISTS content`);
   await run('add intro (blocks)', `ALTER TABLE accessibility_pages ADD COLUMN IF NOT EXISTS intro JSONB`);
-  await run('rename footer_label → footer_note', `
-    DO $$ BEGIN
-      IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='accessibility_pages' AND column_name='footer_label') THEN
-        ALTER TABLE accessibility_pages RENAME COLUMN footer_label TO footer_note;
-      END IF;
-    END $$
-  `);
+  await run('drop footer_label / footer_note', `ALTER TABLE accessibility_pages DROP COLUMN IF EXISTS footer_label, DROP COLUMN IF EXISTS footer_note`);
 
   // -------------------------------------------------------------------------
   // csr_pages

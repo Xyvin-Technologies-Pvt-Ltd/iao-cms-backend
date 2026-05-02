@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_about_teasers",
+  "info": {
+    "displayName": "About Teaser",
+    "description": "Two-column about block for en/fr/de home; not used on nl (nl uses nl_programmes instead)"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "text_2": {
+      "type": "blocks",
+      "required": true
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

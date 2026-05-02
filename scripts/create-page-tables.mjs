@@ -51,8 +51,7 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "accessibility_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "content" TEXT,
-    "footer_label" VARCHAR(255)
+    "content" TEXT
   )
 `);
 
@@ -74,7 +73,6 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "cookies_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "footer_label" VARCHAR(255),
     "sections" JSONB
   )
 `);
@@ -107,7 +105,6 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "disclaimer_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "footer_label" VARCHAR(255),
     "intro" TEXT,
     "last_updated" VARCHAR(255),
     "sections" JSONB
@@ -125,16 +122,6 @@ await createTable(`
     "meta_description_thank_you" TEXT,
     "title_form" VARCHAR(255),
     "intro_form" VARCHAR(255),
-    "first_name" VARCHAR(255),
-    "last_name" VARCHAR(255),
-    "email" VARCHAR(255),
-    "privacy_consent_before" VARCHAR(255),
-    "privacy_consent_link" VARCHAR(255),
-    "privacy_consent_after" VARCHAR(255),
-    "submit" VARCHAR(255),
-    "form_submitting" VARCHAR(255),
-    "form_error" TEXT,
-    "form_validation" TEXT,
     "title_thank_you" VARCHAR(255),
     "thank_you_message" TEXT,
     "brevo_form_url" VARCHAR(255)
@@ -158,7 +145,6 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "legal_notice_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "footer_label" VARCHAR(255),
     "intro" TEXT,
     "items" JSONB
   )
@@ -205,7 +191,6 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "privacy_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "footer_label" VARCHAR(255),
     "last_updated" VARCHAR(255),
     "intro" TEXT,
     "sections" JSONB
@@ -216,7 +201,6 @@ await createTable(`
   CREATE TABLE IF NOT EXISTS "terms_pages" (
     ${baseColumns},
     "title" VARCHAR(255),
-    "footer_label" VARCHAR(255),
     "approval" TEXT,
     "copyright_notice" TEXT,
     "contact_label" VARCHAR(255),

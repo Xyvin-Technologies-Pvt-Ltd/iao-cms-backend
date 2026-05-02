@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_header",
+  "info": {
+    "singularName": "site-header",
+    "pluralName": "site-headers",
+    "displayName": "Site Header",
+    "description": "Global navigation labels and programmes dropdown — one entry per locale."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "nav": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.nav-strings",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "programmes_dropdown": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.programmes-dropdown",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

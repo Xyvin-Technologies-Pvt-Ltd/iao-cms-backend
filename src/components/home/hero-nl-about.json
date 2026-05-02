@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_hero_nl_abouts",
+  "info": {
+    "displayName": "Hero NL About",
+    "description": "Extra about block below hero — only used on nl locale (about_title / about_text1 / about_text2)"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body_1": {
+      "type": "blocks",
+      "required": true
+    },
+    "body_2": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

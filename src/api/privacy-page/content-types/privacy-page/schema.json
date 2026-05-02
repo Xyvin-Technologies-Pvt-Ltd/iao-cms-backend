@@ -27,10 +27,6 @@
       "component": "shared.page-section",
       "repeatable": true,
       "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "footer_note": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

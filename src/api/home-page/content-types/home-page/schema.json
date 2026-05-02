@@ -1,0 +1,71 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": "Main content between Navbar and Footer on the home route. Fill about_teaser for en/fr/de; fill nl_programmes for nl. Leave the other one empty."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "about_teaser": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.about-teaser",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "nl_programmes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.nl-programmes-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "faq_section_title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "faq_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.faq-home-item",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

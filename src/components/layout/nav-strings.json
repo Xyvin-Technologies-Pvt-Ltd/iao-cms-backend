@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_nav_strings",
+  "info": {
+    "displayName": "Nav Strings",
+    "description": "Primary nav labels — matches getDictionary(locale).nav"
+  },
+  "options": {},
+  "attributes": {
+    "lectures":           { "type": "string", "required": true },
+    "about":              { "type": "string", "required": true },
+    "hub":                { "type": "string", "required": true },
+    "shop":               { "type": "string", "required": true },
+    "contact":            { "type": "string", "required": true },
+    "programmes":         { "type": "string", "required": true },
+    "free_trial":         { "type": "string", "required": true },
+    "open_days":          { "type": "string", "required": true },
+    "faq":                { "type": "string", "required": true },
+    "news":               { "type": "string", "required": true },
+    "search":             { "type": "string", "required": true },
+    "search_placeholder": { "type": "string", "required": true }
+  }
+}

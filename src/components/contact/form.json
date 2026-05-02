@@ -17,17 +17,20 @@
     "messageLabel": {
       "type": "string"
     },
-    "consentBefore": {
-      "type": "string"
-    },
-    "consentLinkText": {
-      "type": "string"
-    },
-    "consentAfter": {
-      "type": "string"
+    "consent": {
+      "type": "blocks"
     },
     "submitLabel": {
       "type": "string"
+    },
+    "submittingLabel": {
+      "type": "string"
+    },
+    "validationMessage": {
+      "type": "text"
+    },
+    "errorMessage": {
+      "type": "text"
     }
   }
 }
