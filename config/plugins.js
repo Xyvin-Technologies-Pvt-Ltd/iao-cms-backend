@@ -7,4 +7,7 @@ module.exports = () => ({
       autoOrientation: false,
     },
   },
+  i18n: {
+    enabled: true,
+  },
 });
