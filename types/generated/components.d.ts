@@ -336,6 +336,27 @@ export interface LegalArticleSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ModuleItem extends Struct.ComponentSchema {
+  collectionName: 'components_module_items';
+  info: {
+    displayName: 'item';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ModuleSection extends Struct.ComponentSchema {
+  collectionName: 'components_module_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PracticalRow extends Struct.ComponentSchema {
   collectionName: 'components_practical_rows';
   info: {
@@ -462,6 +483,8 @@ declare module '@strapi/strapi' {
       'layout.programmes-dropdown': LayoutProgrammesDropdown;
       'lecturer.card': LecturerCard;
       'legal.article-section': LegalArticleSection;
+      'module.item': ModuleItem;
+      'module.section': ModuleSection;
       'practical.row': PracticalRow;
       'schedule.day': ScheduleDay;
       'schedule.item': ScheduleItem;

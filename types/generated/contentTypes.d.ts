@@ -1725,6 +1725,12 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    module_sections: Schema.Attribute.Component<'module.section', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     practical_rows: Schema.Attribute.Component<'practical.row', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

@@ -23,35 +23,45 @@
     },
     "title": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     },
     "date": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "imageOverlay": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "badges": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.badge-item",
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.badge-item",
+      "repeatable": true
     },
     "is_past": {
       "type": "boolean",
@@ -60,76 +70,108 @@
     "subtitle": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "intro": {
       "type": "text",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "content": {
       "type": "richtext",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "cta": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "register_link": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "src": {
       "type": "string",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "content_note": {
       "type": "text",
       "pluginOptions": {
-        "i18n": { "localized": true }
+        "i18n": {
+          "localized": true
+        }
       }
     },
     "schedule": {
       "type": "component",
-      "repeatable": true,
-      "component": "schedule.day",
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "schedule.day",
+      "repeatable": true
+    },
+    "module_sections": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "module.section",
+      "repeatable": true
     },
     "practical_rows": {
       "type": "component",
-      "repeatable": true,
-      "component": "practical.row",
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "practical.row",
+      "repeatable": true
     },
     "lecturers": {
       "type": "component",
-      "repeatable": true,
-      "component": "lecturer.card",
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "lecturer.card",
+      "repeatable": true
     },
     "location_info": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.location",
       "pluginOptions": {
-        "i18n": { "localized": true }
-      }
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.location",
+      "repeatable": false
     }
   }
 }
