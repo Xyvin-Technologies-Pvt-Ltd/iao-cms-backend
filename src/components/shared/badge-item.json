@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_badge_items",
+  "info": {
+    "displayName": "Badge Item",
+    "description": "Single badge label"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "success",
+        "warning"
+      ]
+    }
+  }
+}

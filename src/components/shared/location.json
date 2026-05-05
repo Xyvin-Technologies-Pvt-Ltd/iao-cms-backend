@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_locations",
+  "info": {
+    "displayName": "Location",
+    "description": "Shared location information block"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "campus": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "map_embed": {
+      "type": "text"
+    },
+    "search_link": {
+      "type": "text"
+    }
+  }
+}

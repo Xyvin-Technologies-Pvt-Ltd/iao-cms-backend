@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_lecturer_cards",
+  "info": {
+    "displayName": "Card",
+    "description": "Lecturer profile card"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "professional_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

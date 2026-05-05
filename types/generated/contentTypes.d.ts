@@ -1661,19 +1661,13 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    badge: Schema.Attribute.String &
+    badges: Schema.Attribute.Component<'shared.badge-item', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    badges: Schema.Attribute.JSON &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    content_blocks: Schema.Attribute.JSON &
+    content: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1714,13 +1708,7 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
         };
       }>;
     is_past: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    lecturer_layout: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    lecturers: Schema.Attribute.JSON &
+    lecturers: Schema.Attribute.Component<'lecturer.card', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1731,75 +1719,39 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::pam-module.pam-module'
     >;
-    location: Schema.Attribute.String &
+    location_info: Schema.Attribute.Component<'shared.location', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    location_data: Schema.Attribute.JSON &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    post_schedule_blocks: Schema.Attribute.JSON &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    practical_rows: Schema.Attribute.JSON &
+    practical_rows: Schema.Attribute.Component<'practical.row', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    register_link: Schema.Attribute.Text &
+    register_link: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    schedule: Schema.Attribute.JSON &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    schedule_title: Schema.Attribute.String &
+    schedule: Schema.Attribute.Component<'schedule.day', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    src: Schema.Attribute.Text &
+    src: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     subtitle: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    tab_content: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    tab_lecturers: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    tab_practical: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

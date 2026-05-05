@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_schedule_days",
+  "info": {
+    "displayName": "Day",
+    "description": "A day section with schedule items"
+  },
+  "options": {},
+  "attributes": {
+    "day_title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "schedule.item"
+    }
+  }
+}

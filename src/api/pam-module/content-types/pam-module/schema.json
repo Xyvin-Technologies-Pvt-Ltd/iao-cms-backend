@@ -34,12 +34,6 @@
         "i18n": { "localized": true }
       }
     },
-    "location": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -52,13 +46,9 @@
       }
     },
     "badges": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "badge": {
-      "type": "string",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.badge-item",
       "pluginOptions": {
         "i18n": { "localized": true }
       }
@@ -79,6 +69,12 @@
         "i18n": { "localized": true }
       }
     },
+    "content": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
     "cta": {
       "type": "string",
       "pluginOptions": {
@@ -86,30 +82,12 @@
       }
     },
     "register_link": {
-      "type": "text",
+      "type": "string",
       "pluginOptions": {
         "i18n": { "localized": true }
       }
     },
     "src": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "tab_content": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "tab_lecturers": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "tab_practical": {
       "type": "string",
       "pluginOptions": {
         "i18n": { "localized": true }
@@ -121,50 +99,34 @@
         "i18n": { "localized": true }
       }
     },
-    "content_blocks": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "post_schedule_blocks": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "schedule_title": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
     "schedule": {
-      "type": "json",
+      "type": "component",
+      "repeatable": true,
+      "component": "schedule.day",
       "pluginOptions": {
         "i18n": { "localized": true }
       }
     },
     "practical_rows": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": { "localized": true }
-      }
-    },
-    "location_data": {
-      "type": "json",
+      "type": "component",
+      "repeatable": true,
+      "component": "practical.row",
       "pluginOptions": {
         "i18n": { "localized": true }
       }
     },
     "lecturers": {
-      "type": "json",
+      "type": "component",
+      "repeatable": true,
+      "component": "lecturer.card",
       "pluginOptions": {
         "i18n": { "localized": true }
       }
     },
-    "lecturer_layout": {
-      "type": "string",
+    "location_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location",
       "pluginOptions": {
         "i18n": { "localized": true }
       }

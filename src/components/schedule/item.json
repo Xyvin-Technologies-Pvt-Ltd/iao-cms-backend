@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_schedule_items",
+  "info": {
+    "displayName": "Item",
+    "description": "A single schedule activity row"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "text"
+    }
+  }
+}

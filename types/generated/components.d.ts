@@ -309,6 +309,21 @@ export interface LayoutProgrammesDropdown extends Struct.ComponentSchema {
   };
 }
 
+export interface LecturerCard extends Struct.ComponentSchema {
+  collectionName: 'components_lecturer_cards';
+  info: {
+    description: 'Lecturer profile card';
+    displayName: 'Card';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+    professional_title: Schema.Attribute.String;
+    role: Schema.Attribute.String;
+  };
+}
+
 export interface LegalArticleSection extends Struct.ComponentSchema {
   collectionName: 'components_legal_article_sections';
   info: {
@@ -318,6 +333,56 @@ export interface LegalArticleSection extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Blocks;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PracticalRow extends Struct.ComponentSchema {
+  collectionName: 'components_practical_rows';
+  info: {
+    description: 'A practical information row';
+    displayName: 'Row';
+  };
+  attributes: {
+    badges: Schema.Attribute.Component<'shared.badge-item', true>;
+    label: Schema.Attribute.String;
+    note: Schema.Attribute.Text;
+    value: Schema.Attribute.Text;
+  };
+}
+
+export interface ScheduleDay extends Struct.ComponentSchema {
+  collectionName: 'components_schedule_days';
+  info: {
+    description: 'A day section with schedule items';
+    displayName: 'Day';
+  };
+  attributes: {
+    day_title: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'schedule.item', true>;
+  };
+}
+
+export interface ScheduleItem extends Struct.ComponentSchema {
+  collectionName: 'components_schedule_items';
+  info: {
+    description: 'A single schedule activity row';
+    displayName: 'Item';
+  };
+  attributes: {
+    activity: Schema.Attribute.Text;
+    time: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBadgeItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_badge_items';
+  info: {
+    description: 'Single badge label';
+    displayName: 'Badge Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<['success', 'warning']>;
   };
 }
 
@@ -341,6 +406,21 @@ export interface SharedListItem extends Struct.ComponentSchema {
   };
   attributes: {
     text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLocation extends Struct.ComponentSchema {
+  collectionName: 'components_shared_locations';
+  info: {
+    description: 'Shared location information block';
+    displayName: 'Location';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    campus: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    map_embed: Schema.Attribute.Text;
+    search_link: Schema.Attribute.Text;
   };
 }
 
@@ -380,9 +460,15 @@ declare module '@strapi/strapi' {
       'layout.footer-programme-link': LayoutFooterProgrammeLink;
       'layout.nav-strings': LayoutNavStrings;
       'layout.programmes-dropdown': LayoutProgrammesDropdown;
+      'lecturer.card': LecturerCard;
       'legal.article-section': LegalArticleSection;
+      'practical.row': PracticalRow;
+      'schedule.day': ScheduleDay;
+      'schedule.item': ScheduleItem;
+      'shared.badge-item': SharedBadgeItem;
       'shared.clinic-faq-item': SharedClinicFaqItem;
       'shared.list-item': SharedListItem;
+      'shared.location': SharedLocation;
       'shared.page-section': SharedPageSection;
     }
   }

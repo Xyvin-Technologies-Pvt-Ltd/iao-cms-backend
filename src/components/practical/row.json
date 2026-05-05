@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_practical_rows",
+  "info": {
+    "displayName": "Row",
+    "description": "A practical information row"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "text"
+    },
+    "note": {
+      "type": "text"
+    },
+    "badges": {
+      "type": "component",
+      "component": "shared.badge-item",
+      "repeatable": true
+    }
+  }
+}
