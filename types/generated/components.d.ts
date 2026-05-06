@@ -366,7 +366,7 @@ export interface PracticalRow extends Struct.ComponentSchema {
   attributes: {
     badges: Schema.Attribute.Component<'shared.badge-item', true>;
     label: Schema.Attribute.String;
-    note: Schema.Attribute.Text;
+    note: Schema.Attribute.Blocks;
     value: Schema.Attribute.Text;
   };
 }

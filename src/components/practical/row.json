@@ -13,7 +13,7 @@
       "type": "text"
     },
     "note": {
-      "type": "text"
+      "type": "blocks"
     },
     "badges": {
       "type": "component",
