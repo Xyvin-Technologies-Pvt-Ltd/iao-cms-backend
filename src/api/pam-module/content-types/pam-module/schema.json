@@ -123,6 +123,14 @@
         }
       }
     },
+    "schedule_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "schedule": {
       "type": "component",
       "pluginOptions": {

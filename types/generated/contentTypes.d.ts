@@ -1750,6 +1750,12 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    schedule_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     src: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
