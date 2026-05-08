@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_programme_lateral_entries",
+  "info": {
+    "displayName": "Lateral Entry",
+    "description": "Lateral entry inline link and labels"
+  },
+  "options": {},
+  "attributes": {
+    "before": {
+      "type": "text"
+    },
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "after": {
+      "type": "text"
+    },
+    "bold": {
+      "type": "text"
+    },
+    "emphasis": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_programme_campus_cards",
+  "info": {
+    "displayName": "Campus Card",
+    "description": "Programme hub campus card"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}

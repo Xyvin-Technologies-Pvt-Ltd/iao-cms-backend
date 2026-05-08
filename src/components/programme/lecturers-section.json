@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_programme_lecturers_sections",
+  "info": {
+    "displayName": "Lecturers Section",
+    "description": "Lecturers text and link labels"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "link_before": {
+      "type": "text"
+    },
+    "link_label": {
+      "type": "string"
+    },
+    "link_after": {
+      "type": "text"
+    }
+  }
+}

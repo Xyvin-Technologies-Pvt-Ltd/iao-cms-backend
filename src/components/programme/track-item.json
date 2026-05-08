@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_programme_track_items",
+  "info": {
+    "displayName": "Track Item",
+    "description": "Single track module row"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "text"
+    }
+  }
+}
