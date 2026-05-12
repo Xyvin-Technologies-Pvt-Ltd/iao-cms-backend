@@ -11,9 +11,6 @@
     },
     "value": {
       "type": "richtext"
-    },
-    "note": {
-      "type": "richtext"
     }
   }
 }

@@ -569,7 +569,6 @@ export interface ProgrammePracticalRow extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String;
-    note: Schema.Attribute.RichText;
     value: Schema.Attribute.RichText;
   };
 }
