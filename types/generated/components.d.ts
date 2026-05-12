@@ -324,6 +324,33 @@ export interface LecturerCard extends Struct.ComponentSchema {
   };
 }
 
+export interface LecturersPageDepartment extends Struct.ComponentSchema {
+  collectionName: 'components_lecturers_page_departments';
+  info: {
+    description: 'Department block with optional hero and lecturer list';
+    displayName: 'Department';
+  };
+  attributes: {
+    hero_image: Schema.Attribute.Media<'images'>;
+    lecturers: Schema.Attribute.Component<'lecturers-page.lecturer', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LecturersPageLecturer extends Struct.ComponentSchema {
+  collectionName: 'components_lecturers_page_lecturers';
+  info: {
+    description: 'Single lecturer row within a department';
+    displayName: 'Lecturer';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
+    professional_title: Schema.Attribute.String;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LegalArticleSection extends Struct.ComponentSchema {
   collectionName: 'components_legal_article_sections';
   info: {
@@ -723,6 +750,8 @@ declare module '@strapi/strapi' {
       'layout.nav-strings': LayoutNavStrings;
       'layout.programmes-dropdown': LayoutProgrammesDropdown;
       'lecturer.card': LecturerCard;
+      'lecturers-page.department': LecturersPageDepartment;
+      'lecturers-page.lecturer': LecturersPageLecturer;
       'legal.article-section': LegalArticleSection;
       'module.item': ModuleItem;
       'module.section': ModuleSection;

@@ -1266,7 +1266,7 @@ export interface ApiLecturersPageLecturersPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    breadcrumb: Schema.Attribute.String &
+    breadcrumb_label: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1275,7 +1275,7 @@ export interface ApiLecturersPageLecturersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    departments: Schema.Attribute.JSON &
+    departments: Schema.Attribute.Component<'lecturers-page.department', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

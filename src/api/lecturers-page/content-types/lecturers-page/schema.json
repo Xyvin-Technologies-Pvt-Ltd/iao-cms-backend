@@ -9,16 +9,18 @@
   "options": { "draftAndPublish": true },
   "pluginOptions": { "i18n": { "localized": true } },
   "attributes": {
+    "breadcrumb_label": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
     "page_title": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": true } }
     },
-    "breadcrumb": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
     "departments": {
-      "type": "json",
+      "type": "component",
+      "repeatable": true,
+      "component": "lecturers-page.department",
       "pluginOptions": { "i18n": { "localized": true } }
     }
   }
