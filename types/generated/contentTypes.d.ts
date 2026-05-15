@@ -1266,7 +1266,7 @@ export interface ApiLecturersPageLecturersPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    breadcrumb: Schema.Attribute.String &
+    breadcrumb_label: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1275,7 +1275,7 @@ export interface ApiLecturersPageLecturersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    departments: Schema.Attribute.JSON &
+    departments: Schema.Attribute.Component<'lecturers-page.department', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1855,8 +1855,14 @@ export interface ApiProgrammeCampusProgrammeCampus
     };
   };
   attributes: {
+    breadcrumb_label: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     campus_slug: Schema.Attribute.String & Schema.Attribute.Required;
-    content_overrides: Schema.Attribute.JSON &
+    content: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1865,29 +1871,184 @@ export interface ApiProgrammeCampusProgrammeCampus
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    intro: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lecturers: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::programme-campus.programme-campus'
     >;
+    location_info: Schema.Attribute.Component<'shared.location', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    module_sections: Schema.Attribute.Component<
+      'programme.module-section',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    modules_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    practical_rows: Schema.Attribute.Component<
+      'programme.practical-row',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    programme: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::programme-hub.programme-hub'
+    >;
+    programme_type: Schema.Attribute.Enumeration<
+      ['master', 'lateral', 'manual-therapy', 'omt-egypt']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    register_link: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.UID<'campus_slug'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProgrammeHubProgrammeHub
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'programme_hubs';
+  info: {
+    displayName: 'Programme Hub';
+    pluralName: 'programme-hubs';
+    singularName: 'programme-hub';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    breadcrumb_label: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    campus_cards: Schema.Attribute.Component<'programme.campus-card', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    campuses: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::programme-campus.programme-campus'
+    >;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::programme-hub.programme-hub'
+    >;
     programme_type: Schema.Attribute.Enumeration<
       ['master', 'lateral', 'manual-therapy', 'omt-egypt']
     > &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiProgrammeLateralProgrammeLateral
-  extends Struct.SingleTypeSchema {
-  collectionName: 'programme_lateral';
+export interface ApiProgrammeLecturersPageProgrammeLecturersPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'programme_lecturers_pages';
   info: {
-    displayName: 'Programme Lateral Hub';
-    pluralName: 'programme-laterals';
-    singularName: 'programme-lateral';
+    description: 'Programme-specific lecturer landing pages (flat hero + lecturer list)';
+    displayName: 'Programme Lecturers Page';
+    pluralName: 'programme-lecturers-pages';
+    singularName: 'programme-lecturers-page';
   };
   options: {
     draftAndPublish: true;
@@ -1898,7 +2059,8 @@ export interface ApiProgrammeLateralProgrammeLateral
     };
   };
   attributes: {
-    content: Schema.Attribute.JSON &
+    breadcrumb_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1907,88 +2069,42 @@ export interface ApiProgrammeLateralProgrammeLateral
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::programme-lateral.programme-lateral'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiProgrammeManualTherapyProgrammeManualTherapy
-  extends Struct.SingleTypeSchema {
-  collectionName: 'programme_manual_therapy';
-  info: {
-    displayName: 'Programme Manual Therapy Hub';
-    pluralName: 'programme-manual-therapies';
-    singularName: 'programme-manual-therapy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    content: Schema.Attribute.JSON &
+    hero_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::programme-manual-therapy.programme-manual-therapy'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiProgrammeMasterProgrammeMaster
-  extends Struct.SingleTypeSchema {
-  collectionName: 'programme_master';
-  info: {
-    displayName: 'Programme Master Hub';
-    pluralName: 'programme-masters';
-    singularName: 'programme-master';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    content: Schema.Attribute.JSON &
+    lecturers: Schema.Attribute.Component<'shared.lecturer', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::programme-master.programme-master'
+      'api::programme-lecturers-page.programme-lecturers-page'
+    >;
+    programme: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::programme-campus.programme-campus'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2012,21 +2128,57 @@ export interface ApiProgrammesOverviewProgrammesOverview
     };
   };
   attributes: {
-    content: Schema.Attribute.JSON &
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lifelong_intro: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    lifelong_links: Schema.Attribute.Component<'shared.link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lifelong_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::programmes-overview.programmes-overview'
     >;
+    orientation_intro: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    orientation_links: Schema.Attribute.Component<'shared.link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    orientation_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2942,9 +3094,8 @@ declare module '@strapi/strapi' {
       'api::pam-module.pam-module': ApiPamModulePamModule;
       'api::privacy-page.privacy-page': ApiPrivacyPagePrivacyPage;
       'api::programme-campus.programme-campus': ApiProgrammeCampusProgrammeCampus;
-      'api::programme-lateral.programme-lateral': ApiProgrammeLateralProgrammeLateral;
-      'api::programme-manual-therapy.programme-manual-therapy': ApiProgrammeManualTherapyProgrammeManualTherapy;
-      'api::programme-master.programme-master': ApiProgrammeMasterProgrammeMaster;
+      'api::programme-hub.programme-hub': ApiProgrammeHubProgrammeHub;
+      'api::programme-lecturers-page.programme-lecturers-page': ApiProgrammeLecturersPageProgrammeLecturersPage;
       'api::programmes-overview.programmes-overview': ApiProgrammesOverviewProgrammesOverview;
       'api::programmes-postacademic.programmes-postacademic': ApiProgrammesPostacademicProgrammesPostacademic;
       'api::registration-form-page.registration-form-page': ApiRegistrationFormPageRegistrationFormPage;

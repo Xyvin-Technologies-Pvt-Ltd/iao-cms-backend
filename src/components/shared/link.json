@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "Link",
+    "description": "Simple label and path segment link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "segment": {
+      "type": "string"
+    }
+  }
+}

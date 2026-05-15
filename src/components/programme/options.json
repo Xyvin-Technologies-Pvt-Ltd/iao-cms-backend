@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_programme_options",
+  "info": {
+    "displayName": "Options",
+    "description": "Rendering and layout options"
+  },
+  "options": {},
+  "attributes": {
+    "hide_hero_cta": {
+      "type": "boolean",
+      "default": false
+    },
+    "hide_modules_section": {
+      "type": "boolean",
+      "default": false
+    },
+    "breadcrumb_hide_final": {
+      "type": "boolean",
+      "default": false
+    },
+    "programme_layout": {
+      "type": "enumeration",
+      "enum": ["linear", "split", "stacked"],
+      "default": "linear"
+    },
+    "location_layout": {
+      "type": "enumeration",
+      "enum": ["grid", "list"],
+      "default": "grid"
+    }
+  }
+}

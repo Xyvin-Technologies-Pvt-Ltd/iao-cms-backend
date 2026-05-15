@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programme_lecturers_pages",
+  "info": {
+    "singularName": "programme-lecturers-page",
+    "pluralName": "programme-lecturers-pages",
+    "displayName": "Programme Lecturers Page",
+    "description": "Programme-specific lecturer landing pages (flat hero + lecturer list)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "targetField": "title",
+      "required": true
+    },
+    "breadcrumb_label": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "programme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::programme-campus.programme-campus"
+    },
+    "hero_image": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "lecturers": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.lecturer",
+      "repeatable": true
+    }
+  }
+}

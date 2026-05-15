@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_programme_track_groups",
+  "info": {
+    "displayName": "Track Group",
+    "description": "Track section with year splits"
+  },
+  "options": {},
+  "attributes": {
+    "track_title": {
+      "type": "string"
+    },
+    "year_1_title": {
+      "type": "string"
+    },
+    "year_2_title": {
+      "type": "string"
+    },
+    "year_1_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.track-item"
+    },
+    "year_2_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.track-item"
+    }
+  }
+}

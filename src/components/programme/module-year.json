@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_programme_module_years",
+  "info": {
+    "displayName": "Module Year",
+    "description": "Year bucket containing module items"
+  },
+  "options": {},
+  "attributes": {
+    "year_title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.module-item"
+    }
+  }
+}

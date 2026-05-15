@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_programme_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": "Programme hero content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "richtext"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "hide_cta": {
+      "type": "boolean",
+      "default": false
+    },
+    "form_src": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_programme_practical_rows",
+  "info": {
+    "displayName": "Practical Row",
+    "description": "Practical information row"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "richtext"
+    }
+  }
+}

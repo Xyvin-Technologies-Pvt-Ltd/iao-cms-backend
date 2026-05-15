@@ -324,6 +324,32 @@ export interface LecturerCard extends Struct.ComponentSchema {
   };
 }
 
+export interface LecturersPageDepartment extends Struct.ComponentSchema {
+  collectionName: 'components_lecturers_page_departments';
+  info: {
+    description: 'Department block with optional hero and lecturer list';
+    displayName: 'Department';
+  };
+  attributes: {
+    lecturers: Schema.Attribute.Component<'lecturers-page.lecturer', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LecturersPageLecturer extends Struct.ComponentSchema {
+  collectionName: 'components_lecturers_page_lecturers';
+  info: {
+    description: 'Single lecturer row within a department';
+    displayName: 'Lecturer';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
+    professional_title: Schema.Attribute.String;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LegalArticleSection extends Struct.ComponentSchema {
   collectionName: 'components_legal_article_sections';
   info: {
@@ -368,6 +394,235 @@ export interface PracticalRow extends Struct.ComponentSchema {
     label: Schema.Attribute.String;
     note: Schema.Attribute.Blocks;
     value: Schema.Attribute.Text;
+  };
+}
+
+export interface ProgrammeCampusCard extends Struct.ComponentSchema {
+  collectionName: 'components_programme_campus_cards';
+  info: {
+    description: 'Programme hub campus card';
+    displayName: 'Campus Card';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    href: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeCurriculum extends Struct.ComponentSchema {
+  collectionName: 'components_programme_curriculums';
+  info: {
+    description: 'Programme curriculum section';
+    displayName: 'Curriculum';
+  };
+  attributes: {
+    check_color: Schema.Attribute.String;
+    intro_line: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'programme.curriculum-item', true>;
+    list_style: Schema.Attribute.Enumeration<['check', 'bullet', 'number']> &
+      Schema.Attribute.DefaultTo<'check'>;
+    paragraph: Schema.Attribute.RichText;
+    paragraph_2: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeCurriculumItem extends Struct.ComponentSchema {
+  collectionName: 'components_programme_curriculum_items';
+  info: {
+    description: 'Single curriculum line item';
+    displayName: 'Curriculum Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeFlexibleStudy extends Struct.ComponentSchema {
+  collectionName: 'components_programme_flexible_studies';
+  info: {
+    description: 'Flexible study section content';
+    displayName: 'Flexible Study';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    paragraph_1: Schema.Attribute.RichText;
+    paragraph_2: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeHero extends Struct.ComponentSchema {
+  collectionName: 'components_programme_heroes';
+  info: {
+    description: 'Programme hero content';
+    displayName: 'Hero';
+  };
+  attributes: {
+    cta: Schema.Attribute.String;
+    form_src: Schema.Attribute.String;
+    hide_cta: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    intro: Schema.Attribute.RichText;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeLateralEntry extends Struct.ComponentSchema {
+  collectionName: 'components_programme_lateral_entries';
+  info: {
+    description: 'Lateral entry inline link and labels';
+    displayName: 'Lateral Entry';
+  };
+  attributes: {
+    after: Schema.Attribute.Text;
+    before: Schema.Attribute.Text;
+    bold: Schema.Attribute.Text;
+    emphasis: Schema.Attribute.Text;
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeLecturersSection extends Struct.ComponentSchema {
+  collectionName: 'components_programme_lecturers_sections';
+  info: {
+    description: 'Lecturers text and link labels';
+    displayName: 'Lecturers Section';
+  };
+  attributes: {
+    link_after: Schema.Attribute.Text;
+    link_before: Schema.Attribute.Text;
+    link_label: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
+  };
+}
+
+export interface ProgrammeModuleItem extends Struct.ComponentSchema {
+  collectionName: 'components_programme_module_items';
+  info: {
+    description: 'Single module row';
+    displayName: 'Module Item';
+  };
+  attributes: {
+    note: Schema.Attribute.RichText;
+    schedule: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeModuleSection extends Struct.ComponentSchema {
+  collectionName: 'components_programme_module_sections';
+  info: {
+    description: 'Section of programme modules';
+    displayName: 'Module Section';
+  };
+  attributes: {
+    display_mode: Schema.Attribute.Enumeration<['normal', 'tabbed']> &
+      Schema.Attribute.DefaultTo<'normal'>;
+    tabs: Schema.Attribute.Component<'programme.module-tab', true>;
+    title: Schema.Attribute.String;
+    years: Schema.Attribute.Component<'programme.module-year', true>;
+  };
+}
+
+export interface ProgrammeModuleTab extends Struct.ComponentSchema {
+  collectionName: 'components_programme_module_tabs';
+  info: {
+    description: 'Tabbed grouping of module years';
+    displayName: 'Module Tab';
+  };
+  attributes: {
+    tab_label: Schema.Attribute.String;
+    years: Schema.Attribute.Component<'programme.module-year', true>;
+  };
+}
+
+export interface ProgrammeModuleYear extends Struct.ComponentSchema {
+  collectionName: 'components_programme_module_years';
+  info: {
+    description: 'Year bucket containing module items';
+    displayName: 'Module Year';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'programme.module-item', true>;
+    year_title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeOptions extends Struct.ComponentSchema {
+  collectionName: 'components_programme_options';
+  info: {
+    description: 'Rendering and layout options';
+    displayName: 'Options';
+  };
+  attributes: {
+    breadcrumb_hide_final: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    hide_hero_cta: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    hide_modules_section: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    location_layout: Schema.Attribute.Enumeration<['grid', 'list']> &
+      Schema.Attribute.DefaultTo<'grid'>;
+    programme_layout: Schema.Attribute.Enumeration<
+      ['linear', 'split', 'stacked']
+    > &
+      Schema.Attribute.DefaultTo<'linear'>;
+  };
+}
+
+export interface ProgrammePracticalItem extends Struct.ComponentSchema {
+  collectionName: 'components_programme_practical_items';
+  info: {
+    description: 'Practical information line';
+    displayName: 'Practical Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    note: Schema.Attribute.RichText;
+    value: Schema.Attribute.RichText;
+  };
+}
+
+export interface ProgrammePracticalRow extends Struct.ComponentSchema {
+  collectionName: 'components_programme_practical_rows';
+  info: {
+    description: 'Practical information row';
+    displayName: 'Practical Row';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.RichText;
+  };
+}
+
+export interface ProgrammeTrackGroup extends Struct.ComponentSchema {
+  collectionName: 'components_programme_track_groups';
+  info: {
+    description: 'Track section with year splits';
+    displayName: 'Track Group';
+  };
+  attributes: {
+    track_title: Schema.Attribute.String;
+    year_1_items: Schema.Attribute.Component<'programme.track-item', true>;
+    year_1_title: Schema.Attribute.String;
+    year_2_items: Schema.Attribute.Component<'programme.track-item', true>;
+    year_2_title: Schema.Attribute.String;
+  };
+}
+
+export interface ProgrammeTrackItem extends Struct.ComponentSchema {
+  collectionName: 'components_programme_track_items';
+  info: {
+    description: 'Single track module row';
+    displayName: 'Track Item';
+  };
+  attributes: {
+    schedule: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -416,6 +671,32 @@ export interface SharedClinicFaqItem extends Struct.ComponentSchema {
   attributes: {
     answer: Schema.Attribute.Blocks;
     question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLecturer extends Struct.ComponentSchema {
+  collectionName: 'components_shared_lecturers';
+  info: {
+    description: 'Reusable lecturer row (name, role, credentials line, photo)';
+    displayName: 'Lecturer';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
+    professional_title: Schema.Attribute.String;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    description: 'Simple label and path segment link';
+    displayName: 'Link';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    segment: Schema.Attribute.String;
   };
 }
 
@@ -482,14 +763,34 @@ declare module '@strapi/strapi' {
       'layout.nav-strings': LayoutNavStrings;
       'layout.programmes-dropdown': LayoutProgrammesDropdown;
       'lecturer.card': LecturerCard;
+      'lecturers-page.department': LecturersPageDepartment;
+      'lecturers-page.lecturer': LecturersPageLecturer;
       'legal.article-section': LegalArticleSection;
       'module.item': ModuleItem;
       'module.section': ModuleSection;
       'practical.row': PracticalRow;
+      'programme.campus-card': ProgrammeCampusCard;
+      'programme.curriculum': ProgrammeCurriculum;
+      'programme.curriculum-item': ProgrammeCurriculumItem;
+      'programme.flexible-study': ProgrammeFlexibleStudy;
+      'programme.hero': ProgrammeHero;
+      'programme.lateral-entry': ProgrammeLateralEntry;
+      'programme.lecturers-section': ProgrammeLecturersSection;
+      'programme.module-item': ProgrammeModuleItem;
+      'programme.module-section': ProgrammeModuleSection;
+      'programme.module-tab': ProgrammeModuleTab;
+      'programme.module-year': ProgrammeModuleYear;
+      'programme.options': ProgrammeOptions;
+      'programme.practical-item': ProgrammePracticalItem;
+      'programme.practical-row': ProgrammePracticalRow;
+      'programme.track-group': ProgrammeTrackGroup;
+      'programme.track-item': ProgrammeTrackItem;
       'schedule.day': ScheduleDay;
       'schedule.item': ScheduleItem;
       'shared.badge-item': SharedBadgeItem;
       'shared.clinic-faq-item': SharedClinicFaqItem;
+      'shared.lecturer': SharedLecturer;
+      'shared.link': SharedLink;
       'shared.list-item': SharedListItem;
       'shared.location': SharedLocation;
       'shared.page-section': SharedPageSection;

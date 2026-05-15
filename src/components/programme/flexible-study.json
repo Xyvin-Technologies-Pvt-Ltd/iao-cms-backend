@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_programme_flexible_studies",
+  "info": {
+    "displayName": "Flexible Study",
+    "description": "Flexible study section content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "paragraph_1": {
+      "type": "richtext"
+    },
+    "paragraph_2": {
+      "type": "richtext"
+    }
+  }
+}

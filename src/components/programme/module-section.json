@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_programme_module_sections",
+  "info": {
+    "displayName": "Module Section",
+    "description": "Section of programme modules"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "display_mode": {
+      "type": "enumeration",
+      "enum": ["normal", "tabbed"],
+      "default": "normal"
+    },
+    "years": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.module-year"
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.module-tab"
+    }
+  }
+}

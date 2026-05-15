@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_programme_module_tabs",
+  "info": {
+    "displayName": "Module Tab",
+    "description": "Tabbed grouping of module years"
+  },
+  "options": {},
+  "attributes": {
+    "tab_label": {
+      "type": "string"
+    },
+    "years": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.module-year"
+    }
+  }
+}

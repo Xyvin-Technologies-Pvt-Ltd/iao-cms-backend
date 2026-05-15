@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_programme_curriculum_items",
+  "info": {
+    "displayName": "Curriculum Item",
+    "description": "Single curriculum line item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

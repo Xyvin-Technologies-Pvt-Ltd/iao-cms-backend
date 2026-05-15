@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_lecturers_page_departments",
+  "info": {
+    "displayName": "Department",
+    "description": "Department block with optional hero and lecturer list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lecturers": {
+      "type": "component",
+      "component": "lecturers-page.lecturer",
+      "repeatable": true
+    }
+  }
+}

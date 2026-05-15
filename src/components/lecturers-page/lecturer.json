@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_lecturers_page_lecturers",
+  "info": {
+    "displayName": "Lecturer",
+    "description": "Single lecturer row within a department"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "professional_title": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

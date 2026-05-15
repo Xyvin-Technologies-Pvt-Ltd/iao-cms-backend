@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_programme_module_items",
+  "info": {
+    "displayName": "Module Item",
+    "description": "Single module row"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "note": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_programme_curriculums",
+  "info": {
+    "displayName": "Curriculum",
+    "description": "Programme curriculum section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "intro_line": {
+      "type": "text"
+    },
+    "paragraph": {
+      "type": "richtext"
+    },
+    "paragraph_2": {
+      "type": "richtext"
+    },
+    "list_style": {
+      "type": "enumeration",
+      "enum": ["check", "bullet", "number"],
+      "default": "check"
+    },
+    "check_color": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programme.curriculum-item"
+    }
+  }
+}
