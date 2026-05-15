@@ -2041,6 +2041,76 @@ export interface ApiProgrammeHubProgrammeHub
   };
 }
 
+export interface ApiProgrammeLecturersPageProgrammeLecturersPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'programme_lecturers_pages';
+  info: {
+    description: 'Programme-specific lecturer landing pages (flat hero + lecturer list)';
+    displayName: 'Programme Lecturers Page';
+    pluralName: 'programme-lecturers-pages';
+    singularName: 'programme-lecturers-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    breadcrumb_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lecturers: Schema.Attribute.Component<'shared.lecturer', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::programme-lecturers-page.programme-lecturers-page'
+    >;
+    programme: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::programme-campus.programme-campus'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProgrammesOverviewProgrammesOverview
   extends Struct.SingleTypeSchema {
   collectionName: 'programmes_overview';
@@ -3025,6 +3095,7 @@ declare module '@strapi/strapi' {
       'api::privacy-page.privacy-page': ApiPrivacyPagePrivacyPage;
       'api::programme-campus.programme-campus': ApiProgrammeCampusProgrammeCampus;
       'api::programme-hub.programme-hub': ApiProgrammeHubProgrammeHub;
+      'api::programme-lecturers-page.programme-lecturers-page': ApiProgrammeLecturersPageProgrammeLecturersPage;
       'api::programmes-overview.programmes-overview': ApiProgrammesOverviewProgrammesOverview;
       'api::programmes-postacademic.programmes-postacademic': ApiProgrammesPostacademicProgrammesPostacademic;
       'api::registration-form-page.registration-form-page': ApiRegistrationFormPageRegistrationFormPage;

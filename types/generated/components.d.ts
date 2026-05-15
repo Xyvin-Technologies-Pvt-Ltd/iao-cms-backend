@@ -331,7 +331,6 @@ export interface LecturersPageDepartment extends Struct.ComponentSchema {
     displayName: 'Department';
   };
   attributes: {
-    hero_image: Schema.Attribute.Media<'images'>;
     lecturers: Schema.Attribute.Component<'lecturers-page.lecturer', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -675,6 +674,20 @@ export interface SharedClinicFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLecturer extends Struct.ComponentSchema {
+  collectionName: 'components_shared_lecturers';
+  info: {
+    description: 'Reusable lecturer row (name, role, credentials line, photo)';
+    displayName: 'Lecturer';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
+    professional_title: Schema.Attribute.String;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -776,6 +789,7 @@ declare module '@strapi/strapi' {
       'schedule.item': ScheduleItem;
       'shared.badge-item': SharedBadgeItem;
       'shared.clinic-faq-item': SharedClinicFaqItem;
+      'shared.lecturer': SharedLecturer;
       'shared.link': SharedLink;
       'shared.list-item': SharedListItem;
       'shared.location': SharedLocation;

@@ -16,5 +16,16 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  async bootstrap({ strapi }) {
+    const {
+      ensureProgrammeLecturersPagePermissions,
+    } = require('./utils/programme-lecturers-page-permissions');
+    try {
+      await ensureProgrammeLecturersPagePermissions(strapi);
+    } catch (err) {
+      strapi.log.warn(
+        `[bootstrap] programme-lecturers-page permissions skipped: ${err.message}`
+      );
+    }
+  },
 };

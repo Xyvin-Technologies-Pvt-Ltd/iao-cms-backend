@@ -10,15 +10,10 @@
       "type": "string",
       "required": true
     },
-    "hero_image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
     "lecturers": {
       "type": "component",
-      "repeatable": true,
-      "component": "lecturers-page.lecturer"
+      "component": "lecturers-page.lecturer",
+      "repeatable": true
     }
   }
 }
