@@ -281,6 +281,7 @@ export interface LayoutNavStrings extends Struct.ComponentSchema {
     about: Schema.Attribute.String & Schema.Attribute.Required;
     contact: Schema.Attribute.String & Schema.Attribute.Required;
     faq: Schema.Attribute.String & Schema.Attribute.Required;
+    free_hospitation: Schema.Attribute.String & Schema.Attribute.Required;
     free_trial: Schema.Attribute.String & Schema.Attribute.Required;
     hub: Schema.Attribute.String & Schema.Attribute.Required;
     lectures: Schema.Attribute.String & Schema.Attribute.Required;

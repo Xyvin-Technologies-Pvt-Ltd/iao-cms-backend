@@ -12,6 +12,7 @@
     "shop":               { "type": "string", "required": true },
     "contact":            { "type": "string", "required": true },
     "programmes":         { "type": "string", "required": true },
+    "free_hospitation":   { "type": "string", "required": true },
     "free_trial":         { "type": "string", "required": true },
     "open_days":          { "type": "string", "required": true },
     "faq":                { "type": "string", "required": true },
