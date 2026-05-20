@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "free_hospitation_pages",
+  "info": {
+    "singularName": "free-hospitation-page",
+    "pluralName": "free-hospitation-pages",
+    "displayName": "Free Hospitation Page",
+    "description": "Kostenlose Hospitationen — same structure as Free Trial (Online Infoveranstaltung) for shared frontend layout."
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "breadcrumb": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "intro": {
+      "type": "blocks",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "event_sections": {
+      "type": "component",
+      "component": "events.event-section",
+      "repeatable": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}

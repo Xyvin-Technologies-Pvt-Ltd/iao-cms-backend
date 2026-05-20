@@ -20,11 +20,21 @@ module.exports = {
     const {
       ensureProgrammeLecturersPagePermissions,
     } = require('./utils/programme-lecturers-page-permissions');
+    const {
+      ensureFreeHospitationPagePermissions,
+    } = require('./utils/free-hospitation-page-permissions');
     try {
       await ensureProgrammeLecturersPagePermissions(strapi);
     } catch (err) {
       strapi.log.warn(
         `[bootstrap] programme-lecturers-page permissions skipped: ${err.message}`
+      );
+    }
+    try {
+      await ensureFreeHospitationPagePermissions(strapi);
+    } catch (err) {
+      strapi.log.warn(
+        `[bootstrap] free-hospitation-page permissions skipped: ${err.message}`
       );
     }
   },

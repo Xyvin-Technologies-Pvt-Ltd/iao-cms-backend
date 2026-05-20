@@ -41,12 +41,12 @@
     },
     "title": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "subtitle": {
       "type": "string",
@@ -98,23 +98,23 @@
     },
     "module_sections": {
       "type": "component",
-      "repeatable": true,
-      "component": "programme.module-section",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "programme.module-section",
+      "repeatable": true
     },
     "practical_rows": {
       "type": "component",
-      "repeatable": true,
-      "component": "programme.practical-row",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "programme.practical-row",
+      "repeatable": true
     },
     "lecturers": {
       "type": "richtext",
@@ -126,13 +126,13 @@
     },
     "location_info": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.location",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.location",
+      "repeatable": false
     },
     "breadcrumb_label": {
       "type": "string",

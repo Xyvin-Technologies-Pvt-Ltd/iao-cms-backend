@@ -1082,6 +1082,64 @@ export interface ApiFormThankYouFormThankYou
   };
 }
 
+export interface ApiFreeHospitationPageFreeHospitationPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'free_hospitation_pages';
+  info: {
+    description: 'Kostenlose Hospitationen \u2014 same structure as Free Trial (Online Infoveranstaltung) for shared frontend layout.';
+    displayName: 'Free Hospitation Page';
+    pluralName: 'free-hospitation-pages';
+    singularName: 'free-hospitation-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    breadcrumb: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event_sections: Schema.Attribute.Component<'events.event-section', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    intro: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::free-hospitation-page.free-hospitation-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFreeTrialPageFreeTrialPage extends Struct.SingleTypeSchema {
   collectionName: 'free_trial_pages';
   info: {
@@ -3082,6 +3140,7 @@ declare module '@strapi/strapi' {
       'api::ebook-page.ebook-page': ApiEbookPageEbookPage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::form-thank-you.form-thank-you': ApiFormThankYouFormThankYou;
+      'api::free-hospitation-page.free-hospitation-page': ApiFreeHospitationPageFreeHospitationPage;
       'api::free-trial-page.free-trial-page': ApiFreeTrialPageFreeTrialPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::impressum-page.impressum-page': ApiImpressumPageImpressumPage;
