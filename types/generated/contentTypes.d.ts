@@ -2550,10 +2550,7 @@ export interface ApiSiteHeaderSiteHeader extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    programmes_dropdown: Schema.Attribute.Component<
-      'layout.programmes-dropdown',
-      false
-    > &
+    programmes_dropdown: Schema.Attribute.Component<'shared.link', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

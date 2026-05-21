@@ -294,22 +294,6 @@ export interface LayoutNavStrings extends Struct.ComponentSchema {
   };
 }
 
-export interface LayoutProgrammesDropdown extends Struct.ComponentSchema {
-  collectionName: 'components_layout_programmes_dropdowns';
-  info: {
-    description: 'Labels for the Programmes dropdown; omt_egypt only for en, manual_therapy only for nl';
-    displayName: 'Programmes Dropdown';
-  };
-  attributes: {
-    all: Schema.Attribute.String & Schema.Attribute.Required;
-    lateral: Schema.Attribute.String & Schema.Attribute.Required;
-    manual_therapy: Schema.Attribute.String;
-    master: Schema.Attribute.String & Schema.Attribute.Required;
-    omt_egypt: Schema.Attribute.String;
-    postacademic: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface LecturerCard extends Struct.ComponentSchema {
   collectionName: 'components_lecturer_cards';
   info: {
@@ -696,8 +680,8 @@ export interface SharedLink extends Struct.ComponentSchema {
     displayName: 'Link';
   };
   attributes: {
-    label: Schema.Attribute.String;
-    segment: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    segment: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -762,7 +746,6 @@ declare module '@strapi/strapi' {
       'home.nl-programmes-section': HomeNlProgrammesSection;
       'layout.footer-programme-link': LayoutFooterProgrammeLink;
       'layout.nav-strings': LayoutNavStrings;
-      'layout.programmes-dropdown': LayoutProgrammesDropdown;
       'lecturer.card': LecturerCard;
       'lecturers-page.department': LecturersPageDepartment;
       'lecturers-page.lecturer': LecturersPageLecturer;

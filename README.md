@@ -50,6 +50,10 @@ yarn strapi deploy
 
 Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
+## IAO CMS schema notes
+
+- Site Header **Programmes** menu rows: see [`docs/site-header-programmes-dropdown.md`](docs/site-header-programmes-dropdown.md) for the `programmes_dropdown` component UID, example API JSON, and migration warning.
+
 ## ✨ Community
 
 - [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.

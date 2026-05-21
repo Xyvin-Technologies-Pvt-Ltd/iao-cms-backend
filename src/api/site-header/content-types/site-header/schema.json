@@ -29,8 +29,8 @@
     },
     "programmes_dropdown": {
       "type": "component",
-      "repeatable": false,
-      "component": "layout.programmes-dropdown",
+      "repeatable": true,
+      "component": "shared.link",
       "required": true,
       "pluginOptions": {
         "i18n": {
