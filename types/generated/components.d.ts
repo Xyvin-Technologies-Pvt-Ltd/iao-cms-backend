@@ -274,23 +274,23 @@ export interface LayoutFooterProgrammeLink extends Struct.ComponentSchema {
 export interface LayoutNavStrings extends Struct.ComponentSchema {
   collectionName: 'components_layout_nav_strings';
   info: {
-    description: 'Primary nav labels \u2014 matches getDictionary(locale).nav';
+    description: 'Primary nav labels \u2014 matches getDictionary(locale).nav. Leave empty in a locale when that item is not shown (e.g. free_hospitation only for de).';
     displayName: 'Nav Strings';
   };
   attributes: {
-    about: Schema.Attribute.String & Schema.Attribute.Required;
-    contact: Schema.Attribute.String & Schema.Attribute.Required;
-    faq: Schema.Attribute.String & Schema.Attribute.Required;
-    free_hospitation: Schema.Attribute.String & Schema.Attribute.Required;
-    free_trial: Schema.Attribute.String & Schema.Attribute.Required;
-    hub: Schema.Attribute.String & Schema.Attribute.Required;
-    lectures: Schema.Attribute.String & Schema.Attribute.Required;
-    news: Schema.Attribute.String & Schema.Attribute.Required;
-    open_days: Schema.Attribute.String & Schema.Attribute.Required;
-    programmes: Schema.Attribute.String & Schema.Attribute.Required;
-    search: Schema.Attribute.String & Schema.Attribute.Required;
-    search_placeholder: Schema.Attribute.String & Schema.Attribute.Required;
-    shop: Schema.Attribute.String & Schema.Attribute.Required;
+    about: Schema.Attribute.String;
+    contact: Schema.Attribute.String;
+    faq: Schema.Attribute.String;
+    free_hospitation: Schema.Attribute.String;
+    free_trial: Schema.Attribute.String;
+    hub: Schema.Attribute.String;
+    lectures: Schema.Attribute.String;
+    news: Schema.Attribute.String;
+    open_days: Schema.Attribute.String;
+    programmes: Schema.Attribute.String;
+    search: Schema.Attribute.String;
+    search_placeholder: Schema.Attribute.String;
+    shop: Schema.Attribute.String;
   };
 }
 
