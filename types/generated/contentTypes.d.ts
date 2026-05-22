@@ -1752,6 +1752,13 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    hide_from_pam_listing: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images'>;
     imageOverlay: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{

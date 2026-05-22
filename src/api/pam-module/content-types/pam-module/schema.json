@@ -180,6 +180,15 @@
       },
       "component": "shared.location",
       "repeatable": false
+    },
+    "hide_from_pam_listing": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
     }
   }
 }
