@@ -7,10 +7,12 @@
   "options": {},
   "attributes": {
     "label": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "segment": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

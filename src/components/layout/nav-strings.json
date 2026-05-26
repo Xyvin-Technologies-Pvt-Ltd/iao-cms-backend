@@ -2,22 +2,22 @@
   "collectionName": "components_layout_nav_strings",
   "info": {
     "displayName": "Nav Strings",
-    "description": "Primary nav labels — matches getDictionary(locale).nav"
+    "description": "Primary nav labels — matches getDictionary(locale).nav. Leave empty in a locale when that item is not shown (e.g. free_hospitation only for de)."
   },
   "options": {},
   "attributes": {
-    "lectures":           { "type": "string", "required": true },
-    "about":              { "type": "string", "required": true },
-    "hub":                { "type": "string", "required": true },
-    "shop":               { "type": "string", "required": true },
-    "contact":            { "type": "string", "required": true },
-    "programmes":         { "type": "string", "required": true },
-    "free_hospitation":   { "type": "string", "required": true },
-    "free_trial":         { "type": "string", "required": true },
-    "open_days":          { "type": "string", "required": true },
-    "faq":                { "type": "string", "required": true },
-    "news":               { "type": "string", "required": true },
-    "search":             { "type": "string", "required": true },
-    "search_placeholder": { "type": "string", "required": true }
+    "lectures":           { "type": "string" },
+    "about":              { "type": "string" },
+    "hub":                { "type": "string" },
+    "shop":               { "type": "string" },
+    "contact":            { "type": "string" },
+    "programmes":         { "type": "string" },
+    "free_hospitation":   { "type": "string" },
+    "free_trial":         { "type": "string" },
+    "open_days":          { "type": "string" },
+    "faq":                { "type": "string" },
+    "news":               { "type": "string" },
+    "search":             { "type": "string" },
+    "search_placeholder": { "type": "string" }
   }
 }

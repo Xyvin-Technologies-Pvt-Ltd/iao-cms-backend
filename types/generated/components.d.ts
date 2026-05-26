@@ -127,8 +127,7 @@ export interface HomeAboutTeaser extends Struct.ComponentSchema {
   };
   attributes: {
     button_label: Schema.Attribute.String & Schema.Attribute.Required;
-    text_1: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    text_2: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -153,7 +152,6 @@ export interface HomeHero extends Struct.ComponentSchema {
   attributes: {
     cta_label: Schema.Attribute.String & Schema.Attribute.Required;
     lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    lead_secondary: Schema.Attribute.Blocks;
     nl_about: Schema.Attribute.Component<'home.hero-nl-about', false>;
     rating: Schema.Attribute.String & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
@@ -168,8 +166,7 @@ export interface HomeHeroNlAbout extends Struct.ComponentSchema {
     displayName: 'Hero NL About';
   };
   attributes: {
-    body_1: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    body_2: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -274,39 +271,23 @@ export interface LayoutFooterProgrammeLink extends Struct.ComponentSchema {
 export interface LayoutNavStrings extends Struct.ComponentSchema {
   collectionName: 'components_layout_nav_strings';
   info: {
-    description: 'Primary nav labels \u2014 matches getDictionary(locale).nav';
+    description: 'Primary nav labels \u2014 matches getDictionary(locale).nav. Leave empty in a locale when that item is not shown (e.g. free_hospitation only for de).';
     displayName: 'Nav Strings';
   };
   attributes: {
-    about: Schema.Attribute.String & Schema.Attribute.Required;
-    contact: Schema.Attribute.String & Schema.Attribute.Required;
-    faq: Schema.Attribute.String & Schema.Attribute.Required;
-    free_hospitation: Schema.Attribute.String & Schema.Attribute.Required;
-    free_trial: Schema.Attribute.String & Schema.Attribute.Required;
-    hub: Schema.Attribute.String & Schema.Attribute.Required;
-    lectures: Schema.Attribute.String & Schema.Attribute.Required;
-    news: Schema.Attribute.String & Schema.Attribute.Required;
-    open_days: Schema.Attribute.String & Schema.Attribute.Required;
-    programmes: Schema.Attribute.String & Schema.Attribute.Required;
-    search: Schema.Attribute.String & Schema.Attribute.Required;
-    search_placeholder: Schema.Attribute.String & Schema.Attribute.Required;
-    shop: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface LayoutProgrammesDropdown extends Struct.ComponentSchema {
-  collectionName: 'components_layout_programmes_dropdowns';
-  info: {
-    description: 'Labels for the Programmes dropdown; omt_egypt only for en, manual_therapy only for nl';
-    displayName: 'Programmes Dropdown';
-  };
-  attributes: {
-    all: Schema.Attribute.String & Schema.Attribute.Required;
-    lateral: Schema.Attribute.String & Schema.Attribute.Required;
-    manual_therapy: Schema.Attribute.String;
-    master: Schema.Attribute.String & Schema.Attribute.Required;
-    omt_egypt: Schema.Attribute.String;
-    postacademic: Schema.Attribute.String & Schema.Attribute.Required;
+    about: Schema.Attribute.String;
+    contact: Schema.Attribute.String;
+    faq: Schema.Attribute.String;
+    free_hospitation: Schema.Attribute.String;
+    free_trial: Schema.Attribute.String;
+    hub: Schema.Attribute.String;
+    lectures: Schema.Attribute.String;
+    news: Schema.Attribute.String;
+    open_days: Schema.Attribute.String;
+    programmes: Schema.Attribute.String;
+    search: Schema.Attribute.String;
+    search_placeholder: Schema.Attribute.String;
+    shop: Schema.Attribute.String;
   };
 }
 
@@ -696,8 +677,8 @@ export interface SharedLink extends Struct.ComponentSchema {
     displayName: 'Link';
   };
   attributes: {
-    label: Schema.Attribute.String;
-    segment: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    segment: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -762,7 +743,6 @@ declare module '@strapi/strapi' {
       'home.nl-programmes-section': HomeNlProgrammesSection;
       'layout.footer-programme-link': LayoutFooterProgrammeLink;
       'layout.nav-strings': LayoutNavStrings;
-      'layout.programmes-dropdown': LayoutProgrammesDropdown;
       'lecturer.card': LecturerCard;
       'lecturers-page.department': LecturersPageDepartment;
       'lecturers-page.lecturer': LecturersPageLecturer;
