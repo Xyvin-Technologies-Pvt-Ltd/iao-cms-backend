@@ -10,11 +10,7 @@
       "type": "string",
       "required": true
     },
-    "body_1": {
-      "type": "blocks",
-      "required": true
-    },
-    "body_2": {
+    "body": {
       "type": "blocks",
       "required": true
     }

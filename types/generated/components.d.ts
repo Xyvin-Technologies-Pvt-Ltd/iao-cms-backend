@@ -127,8 +127,7 @@ export interface HomeAboutTeaser extends Struct.ComponentSchema {
   };
   attributes: {
     button_label: Schema.Attribute.String & Schema.Attribute.Required;
-    text_1: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    text_2: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -153,7 +152,6 @@ export interface HomeHero extends Struct.ComponentSchema {
   attributes: {
     cta_label: Schema.Attribute.String & Schema.Attribute.Required;
     lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    lead_secondary: Schema.Attribute.Blocks;
     nl_about: Schema.Attribute.Component<'home.hero-nl-about', false>;
     rating: Schema.Attribute.String & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
@@ -168,8 +166,7 @@ export interface HomeHeroNlAbout extends Struct.ComponentSchema {
     displayName: 'Hero NL About';
   };
   attributes: {
-    body_1: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    body_2: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

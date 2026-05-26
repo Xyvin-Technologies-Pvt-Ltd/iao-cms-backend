@@ -17,9 +17,6 @@
       "type": "blocks",
       "required": true
     },
-    "lead_secondary": {
-      "type": "blocks"
-    },
     "cta_label": {
       "type": "string",
       "required": true
@@ -30,8 +27,8 @@
     },
     "nl_about": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.hero-nl-about"
+      "component": "home.hero-nl-about",
+      "repeatable": false
     }
   }
 }

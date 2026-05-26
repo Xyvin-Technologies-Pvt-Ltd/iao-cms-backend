@@ -10,11 +10,7 @@
       "type": "string",
       "required": true
     },
-    "text_1": {
-      "type": "blocks",
-      "required": true
-    },
-    "text_2": {
+    "lead": {
       "type": "blocks",
       "required": true
     },
