@@ -16,8 +16,8 @@
     },
     "bullets": {
       "type": "component",
-      "repeatable": true,
       "component": "home.nl-bullet-line",
+      "repeatable": true,
       "required": true
     },
     "paragraph_2": {
@@ -31,11 +31,16 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "image_alt": {
       "type": "string",
       "required": true
+    },
+    "button_link": {
+      "type": "string"
     }
   }
 }

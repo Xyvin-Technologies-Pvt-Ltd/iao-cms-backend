@@ -192,6 +192,7 @@ export interface HomeNlEbookBlock extends Struct.ComponentSchema {
     bullets: Schema.Attribute.Component<'home.nl-bullet-line', true> &
       Schema.Attribute.Required;
     button_label: Schema.Attribute.String & Schema.Attribute.Required;
+    button_link: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     image_alt: Schema.Attribute.String & Schema.Attribute.Required;
     paragraph_1: Schema.Attribute.Blocks & Schema.Attribute.Required;
