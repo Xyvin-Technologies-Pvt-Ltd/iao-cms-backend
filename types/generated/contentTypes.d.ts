@@ -2312,10 +2312,11 @@ export interface ApiProgrammesPostacademicProgrammesPostacademic
   };
 }
 
-export interface ApiRegistrationFormPageRegistrationFormPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'registration_form_page';
+export interface ApiRegistrationFormPagesRegistrationFormPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'registration_form_pages';
   info: {
+    description: 'Registration landing pages (intro copy + Brevo iframe). Form fields live in Brevo embeds.';
     displayName: 'Registration Form Page';
     pluralName: 'registration-form-pages';
     singularName: 'registration-form-page';
@@ -2329,7 +2330,15 @@ export interface ApiRegistrationFormPageRegistrationFormPage
     };
   };
   attributes: {
-    content: Schema.Attribute.JSON &
+    breadcrumb: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    brevo_form_url: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2338,12 +2347,34 @@ export interface ApiRegistrationFormPageRegistrationFormPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    intro: Schema.Attribute.Blocks &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::registration-form-page.registration-form-page'
+      'api::registration-form-pages.registration-form-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -3187,7 +3218,7 @@ declare module '@strapi/strapi' {
       'api::programme-lecturers-page.programme-lecturers-page': ApiProgrammeLecturersPageProgrammeLecturersPage;
       'api::programmes-overview.programmes-overview': ApiProgrammesOverviewProgrammesOverview;
       'api::programmes-postacademic.programmes-postacademic': ApiProgrammesPostacademicProgrammesPostacademic;
-      'api::registration-form-page.registration-form-page': ApiRegistrationFormPageRegistrationFormPage;
+      'api::registration-form-pages.registration-form-page': ApiRegistrationFormPagesRegistrationFormPage;
       'api::registration-thank-you.registration-thank-you': ApiRegistrationThankYouRegistrationThankYou;
       'api::site-footer.site-footer': ApiSiteFooterSiteFooter;
       'api::site-header.site-header': ApiSiteHeaderSiteHeader;
