@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_footer_partner_logos",
+  "info": {
+    "displayName": "Partner Logo",
+    "description": "Footer partner or certification logo"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}

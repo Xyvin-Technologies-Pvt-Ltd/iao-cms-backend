@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_footer_nav_items",
+  "info": {
+    "displayName": "Nav Item",
+    "description": "Footer link — internal app segment or external URL"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "internal",
+      "enum": [
+        "internal",
+        "external"
+      ]
+    },
+    "segment": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

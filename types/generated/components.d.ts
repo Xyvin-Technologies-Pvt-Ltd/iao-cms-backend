@@ -119,6 +119,113 @@ export interface FaqFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterContactSection extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contact_sections';
+  info: {
+    description: 'Footer contact block \u2014 organization, address, email, phones';
+    displayName: 'Contact Section';
+  };
+  attributes: {
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    organization_name: Schema.Attribute.String & Schema.Attribute.Required;
+    phone_numbers: Schema.Attribute.Component<'footer.phone-item', true>;
+    registration_number: Schema.Attribute.String;
+  };
+}
+
+export interface FooterLegalItem extends Struct.ComponentSchema {
+  collectionName: 'components_footer_legal_items';
+  info: {
+    description: 'Footer legal link key \u2014 label resolved from legal single types on the frontend';
+    displayName: 'Legal Item';
+  };
+  attributes: {
+    key: Schema.Attribute.Enumeration<
+      [
+        'disclaimer',
+        'terms',
+        'legal-notice',
+        'accessibility',
+        'privacy',
+        'cookies',
+        'cookie-settings',
+        'impressum',
+      ]
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface FooterLinkSection extends Struct.ComponentSchema {
+  collectionName: 'components_footer_link_sections';
+  info: {
+    description: 'Footer column title with repeatable navigation links';
+    displayName: 'Link Section';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'footer.nav-item', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface FooterNavItem extends Struct.ComponentSchema {
+  collectionName: 'components_footer_nav_items';
+  info: {
+    description: 'Footer link \u2014 internal app segment or external URL';
+    displayName: 'Nav Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    segment: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['internal', 'external']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'internal'>;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface FooterPartnerLogo extends Struct.ComponentSchema {
+  collectionName: 'components_footer_partner_logos';
+  info: {
+    description: 'Footer partner or certification logo';
+    displayName: 'Partner Logo';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface FooterPhoneItem extends Struct.ComponentSchema {
+  collectionName: 'components_footer_phone_items';
+  info: {
+    description: 'Footer contact phone row with optional label';
+    displayName: 'Phone Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    phone_number: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface FooterSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_footer_social_links';
+  info: {
+    description: 'Footer social platform link';
+    displayName: 'Social Link';
+  };
+  attributes: {
+    platform: Schema.Attribute.Enumeration<
+      ['facebook', 'instagram', 'linkedin', 'youtube', 'other']
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeAboutTeaser extends Struct.ComponentSchema {
   collectionName: 'components_home_about_teasers';
   info: {
@@ -251,21 +358,6 @@ export interface HomeNlProgrammesSection extends Struct.ComponentSchema {
     programme_rows: Schema.Attribute.Component<'home.nl-programme-row', true> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface LayoutFooterProgrammeLink extends Struct.ComponentSchema {
-  collectionName: 'components_layout_footer_programme_links';
-  info: {
-    description: 'One row in the footer Academy column; nav_key drives the href via localePaths';
-    displayName: 'Footer Programme Link';
-  };
-  attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    nav_key: Schema.Attribute.Enumeration<
-      ['master', 'lateral', 'postacademic', 'manueleTherapie']
-    > &
-      Schema.Attribute.Required;
   };
 }
 
@@ -733,6 +825,13 @@ declare module '@strapi/strapi' {
       'events.event-section': EventsEventSection;
       'faq.category': FaqCategory;
       'faq.faq-item': FaqFaqItem;
+      'footer.contact-section': FooterContactSection;
+      'footer.legal-item': FooterLegalItem;
+      'footer.link-section': FooterLinkSection;
+      'footer.nav-item': FooterNavItem;
+      'footer.partner-logo': FooterPartnerLogo;
+      'footer.phone-item': FooterPhoneItem;
+      'footer.social-link': FooterSocialLink;
       'home.about-teaser': HomeAboutTeaser;
       'home.faq-home-item': HomeFaqHomeItem;
       'home.hero': HomeHero;
@@ -742,7 +841,6 @@ declare module '@strapi/strapi' {
       'home.nl-enatom-block': HomeNlEnatomBlock;
       'home.nl-programme-row': HomeNlProgrammeRow;
       'home.nl-programmes-section': HomeNlProgrammesSection;
-      'layout.footer-programme-link': LayoutFooterProgrammeLink;
       'layout.nav-strings': LayoutNavStrings;
       'lecturer.card': LecturerCard;
       'lecturers-page.department': LecturersPageDepartment;

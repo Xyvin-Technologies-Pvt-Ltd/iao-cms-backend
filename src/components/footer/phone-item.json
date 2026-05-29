@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_footer_phone_items",
+  "info": {
+    "displayName": "Phone Item",
+    "description": "Footer contact phone row with optional label"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

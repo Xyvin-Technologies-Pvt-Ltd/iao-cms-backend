@@ -5,6 +5,7 @@
  * Add a UID here when a new type needs the same bootstrap permissions.
  */
 const PUBLIC_READ_UIDS = [
+  'api::site-footer.site-footer',
   'api::programme-lecturers-page.programme-lecturers-page',
   'api::free-hospitation-page.free-hospitation-page',
   'api::registration-form-pages.registration-form-page',
