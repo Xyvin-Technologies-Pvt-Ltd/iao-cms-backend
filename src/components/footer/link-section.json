@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_footer_link_sections",
+  "info": {
+    "displayName": "Link Section",
+    "description": "Footer column title with repeatable navigation links"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.nav-item"
+    }
+  }
+}

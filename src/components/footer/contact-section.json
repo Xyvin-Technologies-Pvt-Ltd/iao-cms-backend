@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_footer_contact_sections",
+  "info": {
+    "displayName": "Contact Section",
+    "description": "Footer contact block — organization, address, email, phones"
+  },
+  "options": {},
+  "attributes": {
+    "organization_name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "registration_number": {
+      "type": "string"
+    },
+    "phone_numbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.phone-item"
+    }
+  }
+}

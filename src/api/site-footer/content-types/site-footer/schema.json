@@ -5,7 +5,7 @@
     "singularName": "site-footer",
     "pluralName": "site-footers",
     "displayName": "Site Footer",
-    "description": "Footer column copy — one entry per locale. Legal page labels stay on their own single types."
+    "description": "Component-based footer — one published entry per locale (en, nl, fr, de)."
   },
   "options": {
     "draftAndPublish": true
@@ -16,62 +16,95 @@
     }
   },
   "attributes": {
-    "academy": {
-      "type": "string",
+    "contact_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.contact-section",
       "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "address_street": {
-      "type": "string",
+    "academy_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.link-section",
       "required": true,
-      "pluginOptions": { "i18n": { "localized": false } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "address_city_country": {
-      "type": "string",
+    "about_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.link-section",
       "required": true,
-      "pluginOptions": { "i18n": { "localized": false } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "programme_links": {
+    "quick_links_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.link-section",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "social_section_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "social_links": {
       "type": "component",
       "repeatable": true,
-      "component": "layout.footer-programme-link",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "component": "footer.social-link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "about_iao": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+    "partner_logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.partner-logo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "associated_clinics": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "csr_policy": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "quick_links": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "not_satisfied": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "follow_us": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+    "legal_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.legal-item",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "recaptcha_notice": {
       "type": "text",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

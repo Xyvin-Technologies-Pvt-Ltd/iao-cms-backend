@@ -17,16 +17,30 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     },
     "breadcrumb": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "message_label": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+    "form": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contact.form",
+      "repeatable": false
     }
   }
 }

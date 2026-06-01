@@ -50,6 +50,14 @@ yarn strapi deploy
 
 Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
+## Media uploads (AWS S3)
+
+When `AWS_BUCKET` is set in `.env`, the Media Library stores files on S3 via `@strapi/provider-upload-aws-s3`. Required variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `AWS_BUCKET`. Optional: `AWS_BASE_URL` (CDN), `AWS_PREFIX` (folder prefix), `AWS_ACL` (omit if the bucket uses bucket-owner-enforced ACLs).
+
+Without `AWS_BUCKET`, uploads stay in `public/uploads` (local provider).
+
+See `.env.example` for a template.
+
 ## IAO CMS schema notes
 
 - Site Header **Programmes** menu rows: see [`docs/site-header-programmes-dropdown.md`](docs/site-header-programmes-dropdown.md) for the `programmes_dropdown` component UID, example API JSON, and migration warning.

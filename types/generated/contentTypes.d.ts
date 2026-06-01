@@ -632,17 +632,17 @@ export interface ApiComplaintsPageComplaintsPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::complaints-page.complaints-page'
-    >;
-    message_label: Schema.Attribute.String &
+    form: Schema.Attribute.Component<'contact.form', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::complaints-page.complaints-page'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1283,6 +1283,12 @@ export interface ApiImpressumPageImpressumPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    intro: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -2312,10 +2318,11 @@ export interface ApiProgrammesPostacademicProgrammesPostacademic
   };
 }
 
-export interface ApiRegistrationFormPageRegistrationFormPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'registration_form_page';
+export interface ApiRegistrationFormPagesRegistrationFormPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'registration_form_pages';
   info: {
+    description: 'Registration landing pages (intro copy + Brevo iframe). Form fields live in Brevo embeds.';
     displayName: 'Registration Form Page';
     pluralName: 'registration-form-pages';
     singularName: 'registration-form-page';
@@ -2329,7 +2336,15 @@ export interface ApiRegistrationFormPageRegistrationFormPage
     };
   };
   attributes: {
-    content: Schema.Attribute.JSON &
+    breadcrumb: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    brevo_form_url: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2338,12 +2353,34 @@ export interface ApiRegistrationFormPageRegistrationFormPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    intro: Schema.Attribute.Blocks &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::registration-form-page.registration-form-page'
+      'api::registration-form-pages.registration-form-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2416,7 +2453,7 @@ export interface ApiRegistrationThankYouRegistrationThankYou
 export interface ApiSiteFooterSiteFooter extends Struct.SingleTypeSchema {
   collectionName: 'site_footer';
   info: {
-    description: 'Footer column copy \u2014 one entry per locale. Legal page labels stay on their own single types.';
+    description: 'Component-based footer \u2014 one published entry per locale (en, nl, fr, de).';
     displayName: 'Site Footer';
     pluralName: 'site-footers';
     singularName: 'site-footer';
@@ -2430,35 +2467,24 @@ export interface ApiSiteFooterSiteFooter extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about_iao: Schema.Attribute.String &
+    about_section: Schema.Attribute.Component<'footer.link-section', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    academy: Schema.Attribute.String &
+    academy_section: Schema.Attribute.Component<'footer.link-section', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    address_city_country: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    address_street: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    associated_clinics: Schema.Attribute.String &
+    contact_section: Schema.Attribute.Component<
+      'footer.contact-section',
+      false
+    > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2468,15 +2494,7 @@ export interface ApiSiteFooterSiteFooter extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    csr_policy: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    follow_us: Schema.Attribute.String &
-      Schema.Attribute.Required &
+    legal_links: Schema.Attribute.Component<'footer.legal-item', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2487,16 +2505,16 @@ export interface ApiSiteFooterSiteFooter extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::site-footer.site-footer'
     >;
-    not_satisfied: Schema.Attribute.String &
-      Schema.Attribute.Required &
+    partner_logos: Schema.Attribute.Component<'footer.partner-logo', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    programme_links: Schema.Attribute.Component<
-      'layout.footer-programme-link',
-      true
+    publishedAt: Schema.Attribute.DateTime;
+    quick_links_section: Schema.Attribute.Component<
+      'footer.link-section',
+      false
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -2504,16 +2522,19 @@ export interface ApiSiteFooterSiteFooter extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    publishedAt: Schema.Attribute.DateTime;
-    quick_links: Schema.Attribute.String &
-      Schema.Attribute.Required &
+    recaptcha_notice: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    recaptcha_notice: Schema.Attribute.Text &
-      Schema.Attribute.Required &
+    social_links: Schema.Attribute.Component<'footer.social-link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    social_section_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -3187,7 +3208,7 @@ declare module '@strapi/strapi' {
       'api::programme-lecturers-page.programme-lecturers-page': ApiProgrammeLecturersPageProgrammeLecturersPage;
       'api::programmes-overview.programmes-overview': ApiProgrammesOverviewProgrammesOverview;
       'api::programmes-postacademic.programmes-postacademic': ApiProgrammesPostacademicProgrammesPostacademic;
-      'api::registration-form-page.registration-form-page': ApiRegistrationFormPageRegistrationFormPage;
+      'api::registration-form-pages.registration-form-page': ApiRegistrationFormPagesRegistrationFormPage;
       'api::registration-thank-you.registration-thank-you': ApiRegistrationThankYouRegistrationThankYou;
       'api::site-footer.site-footer': ApiSiteFooterSiteFooter;
       'api::site-header.site-header': ApiSiteHeaderSiteHeader;
