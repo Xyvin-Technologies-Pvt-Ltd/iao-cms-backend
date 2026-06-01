@@ -1,6 +1,7 @@
 module.exports = ({ env }) => {
   const uploadConfig = {
-    // Disable all image processing to avoid Windows EBUSY temp-file issue.
+    // Image processing flags here are documentation only; runtime settings live in
+    // the upload plugin store and are forced off in src/index.js bootstrap (Windows EBUSY).
     sizeOptimization: false,
     responsiveDimensions: false,
     autoOrientation: false,
@@ -9,12 +10,10 @@ module.exports = ({ env }) => {
   if (env('AWS_BUCKET')) {
     const params = {
       Bucket: env('AWS_BUCKET'),
+      // Explicit null: provider defaults to public-read when ACL is omitted, which
+      // fails on buckets with "Bucket owner enforced" (ACLs disabled).
+      ACL: env('AWS_ACL') || null,
     };
-
-    const acl = env('AWS_ACL');
-    if (acl) {
-      params.ACL = acl;
-    }
 
     uploadConfig.provider = 'aws-s3';
     uploadConfig.providerOptions = {
