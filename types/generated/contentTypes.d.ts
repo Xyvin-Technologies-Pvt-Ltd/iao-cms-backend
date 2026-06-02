@@ -891,23 +891,22 @@ export interface ApiEbookPageEbookPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    breadcrumb_ebook: Schema.Attribute.String &
+    breadcrumb: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    breadcrumb_thank_you: Schema.Attribute.String &
+    brevo_form_url: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    brevo_form_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    intro_form: Schema.Attribute.String &
+    intro: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -918,44 +917,8 @@ export interface ApiEbookPageEbookPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::ebook-page.ebook-page'
     >;
-    meta_description_form: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    meta_description_thank_you: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    meta_title_form: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    meta_title_thank_you: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
-    thank_you_message: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title_form: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title_thank_you: Schema.Attribute.String &
+    title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1049,7 +1012,7 @@ export interface ApiFormThankYouFormThankYou
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     kind: Schema.Attribute.Enumeration<
-      ['contact', 'newsletter', 'complaints']
+      ['contact', 'newsletter', 'complaints', 'ebook']
     > &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String;
@@ -2323,7 +2286,7 @@ export interface ApiRegistrationFormPagesRegistrationFormPage
   collectionName: 'registration_form_pages';
   info: {
     description: 'Registration landing pages (intro copy + Brevo iframe). Form fields live in Brevo embeds.';
-    displayName: 'Registration Form Page';
+    displayName: 'Programme Registration Form Page';
     pluralName: 'registration-form-pages';
     singularName: 'registration-form-page';
   };
@@ -2391,7 +2354,7 @@ export interface ApiRegistrationThankYouRegistrationThankYou
   extends Struct.CollectionTypeSchema {
   collectionName: 'registration_thank_yous';
   info: {
-    displayName: 'Registration Thank You';
+    displayName: 'Programme Registration Thank You';
     pluralName: 'registration-thank-yous';
     singularName: 'registration-thank-you';
   };

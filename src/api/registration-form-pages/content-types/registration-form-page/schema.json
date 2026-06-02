@@ -4,7 +4,7 @@
   "info": {
     "singularName": "registration-form-page",
     "pluralName": "registration-form-pages",
-    "displayName": "Registration Form Page",
+    "displayName": "Programme Registration Form Page",
     "description": "Registration landing pages (intro copy + Brevo iframe). Form fields live in Brevo embeds."
   },
   "options": {
@@ -18,49 +18,49 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
-      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "breadcrumb": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "title": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "intro": {
       "type": "blocks",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "brevo_form_url": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     }
   }
 }
