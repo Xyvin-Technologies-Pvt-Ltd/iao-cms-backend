@@ -15,48 +15,37 @@
     }
   },
   "attributes": {
-    "breadcrumb_ebook": {
+    "breadcrumb": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "breadcrumb_thank_you": {
+    "title": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "meta_title_form": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "meta_title_thank_you": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "meta_description_form": {
+    "intro": {
       "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "meta_description_thank_you": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "title_form": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "intro_form": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "title_thank_you": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "thank_you_message": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "brevo_form_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -234,6 +234,7 @@ export interface HomeAboutTeaser extends Struct.ComponentSchema {
   };
   attributes: {
     button_label: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -263,6 +264,10 @@ export interface HomeHero extends Struct.ComponentSchema {
     rating: Schema.Attribute.String & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
+    videoThumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    videoUrl: Schema.Attribute.String;
   };
 }
 

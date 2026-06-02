@@ -25,6 +25,19 @@
       "type": "string",
       "required": true
     },
+    "videoUrl": {
+      "type": "string"
+    },
+    "videoThumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "nl_about": {
       "type": "component",
       "component": "home.hero-nl-about",
