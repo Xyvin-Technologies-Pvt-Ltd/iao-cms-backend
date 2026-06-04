@@ -181,7 +181,16 @@
       "component": "shared.location",
       "repeatable": false
     },
-    "hide_from_pam_listing": {
+    "show_on_postacademic_module": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
+    },
+    "show_on_postacademic_programmes": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
