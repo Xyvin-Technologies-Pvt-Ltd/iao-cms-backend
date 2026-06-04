@@ -1721,13 +1721,6 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    hide_from_pam_listing: Schema.Attribute.Boolean &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images'>;
     imageOverlay: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1790,6 +1783,20 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    show_on_postacademic_module: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
+    show_on_postacademic_programmes: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     src: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -2201,6 +2208,68 @@ export interface ApiProgrammesOverviewProgrammesOverview
         };
       }>;
     orientation_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProgrammesPostacademicProgrammeProgrammesPostacademicProgramme
+  extends Struct.SingleTypeSchema {
+  collectionName: 'programmes_postacademic_programmes';
+  info: {
+    displayName: 'Programmes Postacademic Programmes';
+    pluralName: 'programmes-postacademic-programmes';
+    singularName: 'programmes-postacademic-programme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    breadcrumb_postacademic_programmes: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    intro: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::programmes-postacademic-programme.programmes-postacademic-programme'
+    >;
+    past_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -3170,6 +3239,7 @@ declare module '@strapi/strapi' {
       'api::programme-hub.programme-hub': ApiProgrammeHubProgrammeHub;
       'api::programme-lecturers-page.programme-lecturers-page': ApiProgrammeLecturersPageProgrammeLecturersPage;
       'api::programmes-overview.programmes-overview': ApiProgrammesOverviewProgrammesOverview;
+      'api::programmes-postacademic-programme.programmes-postacademic-programme': ApiProgrammesPostacademicProgrammeProgrammesPostacademicProgramme;
       'api::programmes-postacademic.programmes-postacademic': ApiProgrammesPostacademicProgrammesPostacademic;
       'api::registration-form-pages.registration-form-page': ApiRegistrationFormPagesRegistrationFormPage;
       'api::registration-thank-you.registration-thank-you': ApiRegistrationThankYouRegistrationThankYou;
