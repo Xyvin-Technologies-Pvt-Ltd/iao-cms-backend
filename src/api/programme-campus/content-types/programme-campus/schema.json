@@ -72,6 +72,14 @@
         }
       }
     },
+    "content_note": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "cta": {
       "type": "string",
       "pluginOptions": {

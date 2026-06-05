@@ -1415,7 +1415,12 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    featuredImage: Schema.Attribute.Media<'images'>;
+    featuredImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     featuredImageAlt: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1429,7 +1434,12 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
         };
       }>;
     featuredImagePadding: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     intro: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1904,6 +1914,12 @@ export interface ApiProgrammeCampusProgrammeCampus
       }>;
     campus_slug: Schema.Attribute.String & Schema.Attribute.Required;
     content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content_note: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
