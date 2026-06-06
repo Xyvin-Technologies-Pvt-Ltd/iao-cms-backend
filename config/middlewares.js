@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = ({ env }) => {
   const s3MediaHosts = ['market-assets.strapi.io'];
 
@@ -39,7 +41,12 @@ module.exports = ({ env }) => {
     'strapi::query',
     'strapi::body',
     'strapi::session',
-    'strapi::favicon',
+    {
+      name: 'strapi::favicon',
+      config: {
+        path: path.join(__dirname, '..', 'public', 'favicon.ico'),
+      },
+    },
     'strapi::public',
   ];
 };
