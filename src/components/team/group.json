@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_team_groups",
+  "info": {
+    "displayName": "Group",
+    "description": "Team subgroup with title and member list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "members": {
+      "type": "component",
+      "component": "team.member",
+      "repeatable": true,
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

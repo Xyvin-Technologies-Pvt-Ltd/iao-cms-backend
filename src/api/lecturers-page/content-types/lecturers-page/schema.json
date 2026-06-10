@@ -6,22 +6,32 @@
     "pluralName": "lecturers-pages",
     "displayName": "Lecturers Page"
   },
-  "options": { "draftAndPublish": true },
-  "pluginOptions": { "i18n": { "localized": true } },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "breadcrumb_label": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "page_title": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "departments": {
       "type": "component",
-      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "lecturers-page.department",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "repeatable": true
     }
   }
 }

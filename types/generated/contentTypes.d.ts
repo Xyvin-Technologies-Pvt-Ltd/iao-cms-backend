@@ -1313,12 +1313,6 @@ export interface ApiLecturersPageLecturersPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::lecturers-page.lecturers-page'
     >;
-    page_title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2640,6 +2634,65 @@ export interface ApiSiteHeaderSiteHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTeamIaoPageTeamIaoPage extends Struct.SingleTypeSchema {
+  collectionName: 'team_iao_pages';
+  info: {
+    displayName: 'Team IAO Page';
+    pluralName: 'team-iao-pages';
+    singularName: 'team-iao-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    breadcrumb_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    groups: Schema.Attribute.Component<'team.group', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    intro: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-iao-page.team-iao-page'
+    >;
+    page_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsPageTermsPage extends Struct.SingleTypeSchema {
   collectionName: 'terms_pages';
   info: {
@@ -3261,6 +3314,7 @@ declare module '@strapi/strapi' {
       'api::registration-thank-you.registration-thank-you': ApiRegistrationThankYouRegistrationThankYou;
       'api::site-footer.site-footer': ApiSiteFooterSiteFooter;
       'api::site-header.site-header': ApiSiteHeaderSiteHeader;
+      'api::team-iao-page.team-iao-page': ApiTeamIaoPageTeamIaoPage;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

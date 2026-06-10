@@ -6,18 +6,47 @@
   },
   "options": {},
   "attributes": {
-    "lectures":           { "type": "string" },
-    "about":              { "type": "string" },
-    "hub":                { "type": "string" },
-    "shop":               { "type": "string" },
-    "contact":            { "type": "string" },
-    "programmes":         { "type": "string" },
-    "free_hospitation":   { "type": "string" },
-    "free_trial":         { "type": "string" },
-    "open_days":          { "type": "string" },
-    "faq":                { "type": "string" },
-    "news":               { "type": "string" },
-    "search":             { "type": "string" },
-    "search_placeholder": { "type": "string" }
+    "lectures": {
+      "type": "string"
+    },
+    "team_iao": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "hub": {
+      "type": "string"
+    },
+    "shop": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "programmes": {
+      "type": "string"
+    },
+    "free_hospitation": {
+      "type": "string"
+    },
+    "free_trial": {
+      "type": "string"
+    },
+    "open_days": {
+      "type": "string"
+    },
+    "faq": {
+      "type": "string"
+    },
+    "news": {
+      "type": "string"
+    },
+    "search": {
+      "type": "string"
+    },
+    "search_placeholder": {
+      "type": "string"
+    }
   }
 }
