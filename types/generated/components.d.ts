@@ -386,6 +386,7 @@ export interface LayoutNavStrings extends Struct.ComponentSchema {
     search: Schema.Attribute.String;
     search_placeholder: Schema.Attribute.String;
     shop: Schema.Attribute.String;
+    team_iao: Schema.Attribute.String;
   };
 }
 
@@ -818,6 +819,66 @@ export interface SharedPageSection extends Struct.ComponentSchema {
   };
 }
 
+export interface TeamGroup extends Struct.ComponentSchema {
+  collectionName: 'components_team_groups';
+  info: {
+    description: 'Team subgroup with title and member list';
+    displayName: 'Group';
+  };
+  attributes: {
+    members: Schema.Attribute.Component<'team.member', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface TeamMember extends Struct.ComponentSchema {
+  collectionName: 'components_team_members';
+  info: {
+    description: 'Single team member within a group';
+    displayName: 'Member';
+  };
+  attributes: {
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    photo: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    professional_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    role: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -879,6 +940,8 @@ declare module '@strapi/strapi' {
       'shared.list-item': SharedListItem;
       'shared.location': SharedLocation;
       'shared.page-section': SharedPageSection;
+      'team.group': TeamGroup;
+      'team.member': TeamMember;
     }
   }
 }

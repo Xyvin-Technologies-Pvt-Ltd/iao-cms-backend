@@ -9,6 +9,7 @@ const PUBLIC_READ_UIDS = [
   'api::programme-lecturers-page.programme-lecturers-page',
   'api::free-hospitation-page.free-hospitation-page',
   'api::registration-form-pages.registration-form-page',
+  'api::team-iao-page.team-iao-page',
 ];
 
 const ACTIONS_BY_ROLE = {
