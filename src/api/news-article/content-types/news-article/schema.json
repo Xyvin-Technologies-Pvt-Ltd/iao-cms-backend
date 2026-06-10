@@ -18,53 +18,78 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     },
     "slug": {
       "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "targetField": "title",
-      "required": true,
-      "pluginOptions": { "i18n": { "localized": true } }
+      "required": true
     },
     "date": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "excerpt": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "intro": {
       "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "content": {
       "type": "richtext",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "featuredImageCaption": {
       "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "featuredImageAlt": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "featuredImagePadding": {
-      "type": "string"
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "image": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
-      "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": true } }
+      "allowedTypes": [
+        "images"
+      ]
     },
     "featuredImage": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
-      "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": true } }
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

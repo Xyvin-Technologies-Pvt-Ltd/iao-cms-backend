@@ -1403,19 +1403,7 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    excerpt: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     featuredImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    featuredImageAlt: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1427,7 +1415,6 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    featuredImagePadding: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
