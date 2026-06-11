@@ -2118,10 +2118,6 @@ export interface ApiProgrammeLecturersPageProgrammeLecturersPage
       'oneToMany',
       'api::programme-lecturers-page.programme-lecturers-page'
     >;
-    programme: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::programme-campus.programme-campus'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
