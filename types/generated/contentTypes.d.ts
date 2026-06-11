@@ -1432,6 +1432,12 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::news-article.news-article'
     >;
+    publish_date: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
@@ -1789,12 +1795,6 @@ export interface ApiPamModulePamModule extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.DefaultTo<false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    src: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     subtitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
