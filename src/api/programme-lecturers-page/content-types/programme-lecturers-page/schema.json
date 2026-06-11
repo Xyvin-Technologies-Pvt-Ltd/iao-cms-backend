@@ -44,11 +44,6 @@
       },
       "required": true
     },
-    "programme": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::programme-campus.programme-campus"
-    },
     "hero_image": {
       "type": "media",
       "pluginOptions": {

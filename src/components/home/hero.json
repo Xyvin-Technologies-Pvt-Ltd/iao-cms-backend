@@ -21,6 +21,9 @@
       "type": "string",
       "required": true
     },
+    "cta_segment": {
+      "type": "string"
+    },
     "rating": {
       "type": "string",
       "required": true
