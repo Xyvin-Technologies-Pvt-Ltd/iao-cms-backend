@@ -35,14 +35,6 @@
       "targetField": "title",
       "required": true
     },
-    "date": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "publish_date": {
       "type": "date",
       "pluginOptions": {
