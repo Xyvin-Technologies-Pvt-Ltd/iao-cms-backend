@@ -107,14 +107,6 @@
         }
       }
     },
-    "src": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "content_note": {
       "type": "text",
       "pluginOptions": {

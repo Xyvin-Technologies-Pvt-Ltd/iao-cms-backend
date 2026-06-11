@@ -43,6 +43,14 @@
         }
       }
     },
+    "publish_date": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "intro": {
       "type": "text",
       "pluginOptions": {
