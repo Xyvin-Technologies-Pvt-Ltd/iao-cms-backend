@@ -577,7 +577,7 @@ export interface ProgrammeLecturersDepartment extends Struct.ComponentSchema {
   };
   attributes: {
     lecturers: Schema.Attribute.Component<'shared.lecturer', true>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
