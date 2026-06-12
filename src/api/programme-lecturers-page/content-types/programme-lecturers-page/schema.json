@@ -24,7 +24,7 @@
           "localized": true
         }
       },
-      "required": true
+      "required": false
     },
     "slug": {
       "type": "uid",

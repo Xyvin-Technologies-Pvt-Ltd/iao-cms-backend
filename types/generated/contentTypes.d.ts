@@ -2131,7 +2131,6 @@ export interface ApiProgrammeLecturersPageProgrammeLecturersPage
         };
       }>;
     title: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
