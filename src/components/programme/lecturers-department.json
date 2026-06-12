@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_programme_lecturers_departments",
+  "info": {
+    "displayName": "Programme Lecturers Department",
+    "description": "Department section with title and lecturer list on programme lecturer pages"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lecturers": {
+      "type": "component",
+      "component": "shared.lecturer",
+      "repeatable": true
+    }
+  }
+}
