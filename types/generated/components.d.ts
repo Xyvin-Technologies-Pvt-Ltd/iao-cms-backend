@@ -569,6 +569,18 @@ export interface ProgrammeLateralEntry extends Struct.ComponentSchema {
   };
 }
 
+export interface ProgrammeLecturersDepartment extends Struct.ComponentSchema {
+  collectionName: 'components_programme_lecturers_departments';
+  info: {
+    description: 'Department section with title and lecturer list on programme lecturer pages';
+    displayName: 'Programme Lecturers Department';
+  };
+  attributes: {
+    lecturers: Schema.Attribute.Component<'shared.lecturer', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ProgrammeLecturersSection extends Struct.ComponentSchema {
   collectionName: 'components_programme_lecturers_sections';
   info: {
@@ -922,6 +934,7 @@ declare module '@strapi/strapi' {
       'programme.flexible-study': ProgrammeFlexibleStudy;
       'programme.hero': ProgrammeHero;
       'programme.lateral-entry': ProgrammeLateralEntry;
+      'programme.lecturers-department': ProgrammeLecturersDepartment;
       'programme.lecturers-section': ProgrammeLecturersSection;
       'programme.module-item': ProgrammeModuleItem;
       'programme.module-section': ProgrammeModuleSection;

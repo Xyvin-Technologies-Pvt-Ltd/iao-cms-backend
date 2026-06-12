@@ -2077,8 +2077,9 @@ export interface ApiProgrammeLecturersPageProgrammeLecturersPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'programme_lecturers_pages';
   info: {
-    description: 'Programme-specific lecturer landing pages (flat hero + lecturer list)';
+    description: 'Programme-specific lecturer landing pages (hero + department lecturer lists)';
     displayName: 'Programme Lecturers Page';
+    mainField: 'title';
     pluralName: 'programme-lecturers-pages';
     singularName: 'programme-lecturers-page';
   };
@@ -2101,13 +2102,16 @@ export interface ApiProgrammeLecturersPageProgrammeLecturersPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero_image: Schema.Attribute.Media<'images'> &
+    departments: Schema.Attribute.Component<
+      'programme.lecturers-department',
+      true
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    lecturers: Schema.Attribute.Component<'shared.lecturer', true> &
+    hero_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

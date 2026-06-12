@@ -5,7 +5,8 @@
     "singularName": "programme-lecturers-page",
     "pluralName": "programme-lecturers-pages",
     "displayName": "Programme Lecturers Page",
-    "description": "Programme-specific lecturer landing pages (flat hero + lecturer list)"
+    "description": "Programme-specific lecturer landing pages (hero + department lecturer lists)",
+    "mainField": "title"
   },
   "options": {
     "draftAndPublish": true
@@ -56,14 +57,14 @@
         "images"
       ]
     },
-    "lecturers": {
+    "departments": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.lecturer",
+      "component": "programme.lecturers-department",
       "repeatable": true
     }
   }
