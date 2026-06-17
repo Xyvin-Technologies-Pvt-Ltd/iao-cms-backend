@@ -1970,7 +1970,6 @@ export interface ApiProgrammeCampusProgrammeCampus
           localized: true;
         };
       }>;
-    slug: Schema.Attribute.UID<'campus_slug'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2053,7 +2052,6 @@ export interface ApiProgrammeHubProgrammeHub
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
