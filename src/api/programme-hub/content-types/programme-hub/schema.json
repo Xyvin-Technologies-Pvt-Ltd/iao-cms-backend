@@ -86,6 +86,16 @@
       "relation": "oneToMany",
       "target": "api::programme-campus.programme-campus",
       "mappedBy": "programme"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

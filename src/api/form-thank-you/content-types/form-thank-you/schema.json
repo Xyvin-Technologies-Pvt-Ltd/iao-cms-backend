@@ -25,22 +25,6 @@
         "ebook"
       ]
     },
-    "meta_title": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "meta_description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "breadcrumb_parent": {
       "type": "string",
       "pluginOptions": {
@@ -72,6 +56,16 @@
           "localized": true
         }
       }
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
