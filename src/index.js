@@ -10,6 +10,9 @@ module.exports = {
   register({ strapi }) {
     const { patchFsExtraRemove } = require('./utils/safe-fs-remove');
     patchFsExtraRemove(strapi.log);
+
+    const { registerComponentIdSanitizer } = require('./utils/sanitize-component-ids');
+    registerComponentIdSanitizer(strapi, ['api::faq-page.faq-page']);
   },
 
   /**
