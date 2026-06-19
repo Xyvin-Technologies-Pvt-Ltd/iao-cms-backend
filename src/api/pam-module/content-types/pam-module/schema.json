@@ -5,7 +5,7 @@
     "singularName": "pam-module",
     "pluralName": "pam-modules",
     "displayName": "PAM Module",
-    "description": "Postacademic Module – listing card and detail page content"
+    "description": "Postacademic Module \u2013 listing card and detail page content"
   },
   "options": {
     "draftAndPublish": true
@@ -190,6 +190,16 @@
         }
       },
       "default": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

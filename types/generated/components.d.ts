@@ -832,6 +832,34 @@ export interface SharedPageSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: 'SEO metadata fields for pages';
+    displayName: 'Seo';
+  };
+  attributes: {
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface TeamGroup extends Struct.ComponentSchema {
   collectionName: 'components_team_groups';
   info: {
@@ -954,6 +982,7 @@ declare module '@strapi/strapi' {
       'shared.list-item': SharedListItem;
       'shared.location': SharedLocation;
       'shared.page-section': SharedPageSection;
+      'shared.seo': SharedSeo;
       'team.group': TeamGroup;
       'team.member': TeamMember;
     }
