@@ -1,5 +1,7 @@
 'use strict';
 
+const { errors } = require('@strapi/utils');
+
 const UID = 'api::form-thank-you.form-thank-you';
 
 async function assertUniqueKind(strapi, kind, documentId) {
@@ -14,7 +16,7 @@ async function assertUniqueKind(strapi, kind, documentId) {
   const duplicate = documentIds.find((id) => id !== documentId);
 
   if (duplicate) {
-    throw new Error(
+    throw new errors.ApplicationError(
       `A Form Thank You entry with kind "${kind}" already exists. Add a locale to the existing entry instead of creating a new one.`
     );
   }
@@ -23,7 +25,8 @@ async function assertUniqueKind(strapi, kind, documentId) {
 module.exports = {
   async beforeCreate(event) {
     const kind = event.params.data?.kind;
-    await assertUniqueKind(strapi, kind, null);
+    const documentId = event.params.documentId ?? event.params.data?.documentId;
+    await assertUniqueKind(strapi, kind, documentId);
   },
 
   async beforeUpdate(event) {
