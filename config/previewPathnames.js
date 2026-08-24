@@ -29,6 +29,7 @@ const SINGLE_TYPE_INTERNAL_PATHS = {
   "programmes-postacademic-programme": "programmes/postacademic-programmes",
   "team-iao-page": "team-iao",
   "terms-page": "terms",
+  "witboek-page": "witboek",
 };
 
 const WP = {
@@ -51,6 +52,7 @@ const WP = {
     lecturers: "lecturers",
     teamIao: "team-iao",
     programmeLectures: "programme-lectures",
+    witboek: "white-paper",
   },
   nl: {
     about: "over-iao",
@@ -69,6 +71,7 @@ const WP = {
     newsletter: "newsletter",
     lecturers: "docenten",
     programmeLectures: "programma-docenten",
+    witboek: "witboek",
   },
   fr: {
     about: "a-propos-iao",
@@ -87,6 +90,7 @@ const WP = {
     lecturers: "professeurs",
     teamIao: "equipe-iao",
     programmeLectures: "programme-professeurs",
+    witboek: "livre-blanc",
   },
   de: {
     about: "uber-iao",
@@ -105,6 +109,7 @@ const WP = {
     teamIao: "team-iao",
     programmeLectures: "programm-dozenten",
     freeHospitation: "kostenlose-hospitationen",
+    witboek: "weissbuch",
   },
 };
 
@@ -119,6 +124,7 @@ const NL_LEGAL = {
   csr: "over-iao/csr",
   "e-book": "e-book",
   impressum: "impressum",
+  witboek: "witboek",
 };
 
 const EN_PROGRAMME_DEFAULT_CAMPUS = "copenhagen";
@@ -162,6 +168,7 @@ function internalToPublicPath(locale, internalPath) {
     return "complaints/thank-you";
   }
   if (parts[0] === "e-book" && parts[1] === "bedankt") return "e-book/bedankt";
+  if (parts[0] === "witboek") return L.witboek ?? "witboek";
   if (parts[0] === "contact") return L.contact;
   if (parts[0] === "newsletter") return L.newsletter;
   if (parts[0] === "lecturers") return L.lecturers ?? "lecturers";

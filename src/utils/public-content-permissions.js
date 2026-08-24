@@ -10,6 +10,7 @@ const PUBLIC_READ_UIDS = [
   'api::free-hospitation-page.free-hospitation-page',
   'api::registration-form-pages.registration-form-page',
   'api::team-iao-page.team-iao-page',
+  'api::witboek-page.witboek-page',
 ];
 
 const ACTIONS_BY_ROLE = {
