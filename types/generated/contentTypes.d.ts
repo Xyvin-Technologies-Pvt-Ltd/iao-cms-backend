@@ -2928,6 +2928,55 @@ export interface ApiTermsPageTermsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiWitboekPageWitboekPage extends Struct.SingleTypeSchema {
+  collectionName: 'witboek_pages';
+  info: {
+    displayName: 'Witboek Page';
+    pluralName: 'witboek-pages';
+    singularName: 'witboek-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    breadcrumb: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::witboek-page.witboek-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -3474,6 +3523,7 @@ declare module '@strapi/strapi' {
       'api::site-header.site-header': ApiSiteHeaderSiteHeader;
       'api::team-iao-page.team-iao-page': ApiTeamIaoPageTeamIaoPage;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
+      'api::witboek-page.witboek-page': ApiWitboekPageWitboekPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
