@@ -2988,6 +2988,12 @@ export interface ApiWitboekPageWitboekPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::witboek-page.witboek-page'
     >;
+    post_faq_body: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
