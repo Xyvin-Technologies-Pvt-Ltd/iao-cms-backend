@@ -262,7 +262,7 @@ export interface HomeHero extends Struct.ComponentSchema {
     cta_segment: Schema.Attribute.String;
     lead: Schema.Attribute.Blocks & Schema.Attribute.Required;
     nl_about: Schema.Attribute.Component<'home.hero-nl-about', false>;
-    rating: Schema.Attribute.String & Schema.Attribute.Required;
+    rating: Schema.Attribute.String;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
     videoThumbnail: Schema.Attribute.Media<
