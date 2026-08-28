@@ -768,6 +768,18 @@ export interface SharedClinicFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCtaButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cta_buttons';
+  info: {
+    description: 'A labeled button linking to a page, document, or external URL';
+    displayName: 'CTA Button';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedLecturer extends Struct.ComponentSchema {
   collectionName: 'components_shared_lecturers';
   info: {
@@ -977,6 +989,7 @@ declare module '@strapi/strapi' {
       'schedule.item': ScheduleItem;
       'shared.badge-item': SharedBadgeItem;
       'shared.clinic-faq-item': SharedClinicFaqItem;
+      'shared.cta-button': SharedCtaButton;
       'shared.lecturer': SharedLecturer;
       'shared.link': SharedLink;
       'shared.list-item': SharedListItem;
