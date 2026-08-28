@@ -59,6 +59,14 @@
         }
       }
     },
+    "post_faq_body": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "brevo_form_url": {
       "type": "string",
       "pluginOptions": {
