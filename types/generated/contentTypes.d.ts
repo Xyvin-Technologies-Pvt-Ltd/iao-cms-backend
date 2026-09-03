@@ -1461,6 +1461,69 @@ export interface ApiLegalNoticePageLegalNoticePage
   };
 }
 
+export interface ApiMasterValuePageMasterValuePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'master_value_pages';
+  info: {
+    displayName: 'Master Value Page';
+    pluralName: 'master-value-pages';
+    singularName: 'master-value-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    breadcrumb: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::master-value-page.master-value-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
   collectionName: 'news_articles';
   info: {
@@ -3535,6 +3598,7 @@ declare module '@strapi/strapi' {
       'api::impressum-page.impressum-page': ApiImpressumPageImpressumPage;
       'api::lecturers-page.lecturers-page': ApiLecturersPageLecturersPage;
       'api::legal-notice-page.legal-notice-page': ApiLegalNoticePageLegalNoticePage;
+      'api::master-value-page.master-value-page': ApiMasterValuePageMasterValuePage;
       'api::news-article.news-article': ApiNewsArticleNewsArticle;
       'api::newsletter-page.newsletter-page': ApiNewsletterPageNewsletterPage;
       'api::newsletter-strip.newsletter-strip': ApiNewsletterStripNewsletterStrip;
